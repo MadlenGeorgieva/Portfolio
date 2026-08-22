@@ -1,8 +1,14 @@
 import ProjectDetailTemplate from "../Components/ProjectDetailTemplate.jsx";
-import { botanicalGardenProject } from "../data/projects.js";
+import { Navigate, useParams } from "react-router-dom";
+import { projectsBySlug } from "../data/projects.js";
 
 function ProjectDetail() {
-  return <ProjectDetailTemplate project={botanicalGardenProject} />;
+  const { slug } = useParams();
+  const project = projectsBySlug[slug];
+
+  if (!project) return <Navigate to="/projects" replace />;
+
+  return <ProjectDetailTemplate project={project} />;
 }
 
 export default ProjectDetail;

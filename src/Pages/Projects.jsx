@@ -10,10 +10,10 @@ import { Link } from "react-router-dom";
 const projectImages = [blaSolImage, hyggeImage, spilcafeenImage, botanicalImage];
 
 const projects = [
-  { title: "BLÅ SOL", subtitle: "LOSE YOURSELF IN THE MUSIC, NOT THE CROWD", tone: "music", mark: "50" },
-  { title: "HIDDEN HYGGE PLACES", subtitle: "FIND YOUR NEXT COZY ESCAPE", tone: "hygge", mark: "HYGGE" },
-  { title: "SPILCAFEEN", subtitle: "WHERE PLAY HAS NO BORDERS", tone: "games", mark: "PLAY" },
-  { title: "BOTANICAL GARDEN AARHUS", subtitle: "BRING YOU DIGITAL GARDEN TO LIFE", tone: "garden", mark: "AARHUS" },
+  { title: "BLÅ SOL", subtitle: "LOSE YOURSELF IN THE MUSIC, NOT THE CROWD", tone: "music", mark: "50", slug: "bla-sol" },
+  { title: "HIDDEN HYGGE PLACES", subtitle: "FIND YOUR NEXT COZY ESCAPE", tone: "hygge", mark: "HYGGE", slug: "hidden-hygge-places" },
+  { title: "SPILCAFEEN", subtitle: "WHERE PLAY HAS NO BORDERS", tone: "games", mark: "PLAY", slug: "spilcafeen" },
+  { title: "BOTANICAL GARDEN AARHUS", subtitle: "BRING YOU DIGITAL GARDEN TO LIFE", tone: "garden", mark: "AARHUS", slug: "botanical-garden" },
 ];
 
 function Projects() {
@@ -23,8 +23,8 @@ function Projects() {
       <h1>PR<span>O</span>JECTS</h1>
       <div className={styles.grid}>
         {projects.map((project, index) => <article key={project.title}>
-          {project.tone === "garden" ? <Link
-            to="/projects/botanical-garden"
+          {project.slug ? <Link
+            to={`/projects/${project.slug}`}
             className={styles.mockup}
             style={{ backgroundImage: `url(${projectImages[index]})` }}
           >
