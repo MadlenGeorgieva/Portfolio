@@ -16,7 +16,7 @@ function Footer() {
       <div className={styles.divider}></div>
 
       <div className={styles.contactItem}>
-        <div className={styles.icon}>☎</div>
+        <div className={styles.icon} aria-hidden="true">☎</div>
 
         <div>
           <p>(+45) 71817500</p>
@@ -27,7 +27,7 @@ function Footer() {
       <div className={styles.divider}></div>
 
       <div className={styles.contactItem}>
-        <div className={styles.icon}>✉</div>
+        <div className={styles.icon} aria-hidden="true">✉</div>
 
         <div>
           <p>madlengeorgieva2005@gmail.com</p>

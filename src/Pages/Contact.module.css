@@ -20,4 +20,4 @@
 
 @media(min-width:1101px){.details{width:100%;max-width:1200px;margin:75px auto 0;display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:40px}.details a{width:auto;flex:0 1 auto;justify-content:flex-start;text-align:left;gap:16px}.details a:nth-child(2){justify-content:center}.details a:nth-child(3){justify-content:flex-end}.details b,.details a:nth-child(even) b{order:-1}}
 
-.main{min-height:calc(100vh - 95px)}@media(min-width:1101px){.details{margin-top:125px}}
+.main{min-height:calc(100vh - 95px)}@media(min-width:1101px){.details{margin-top:180px}}

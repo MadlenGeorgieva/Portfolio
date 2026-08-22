@@ -96,7 +96,9 @@
   .icon { min-width: 26px; }
 }
 
-.footer .icon{display:none}
+.footer .icon{display:grid}
+
+.footer>.contactItem:nth-child(3) .icon,.footer>.contactItem:nth-child(5) .icon{font-size:1.1rem}.footer>.contactItem:nth-child(3) .icon::before,.footer>.contactItem:nth-child(5) .icon::before{content:none}
 
 .footer > .contactItem:nth-child(3) .icon,
 .footer > .contactItem:nth-child(5) .icon {
