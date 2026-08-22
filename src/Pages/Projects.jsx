@@ -5,6 +5,7 @@ import blaSolImage from "../assets/project-bla-sol.png";
 import hyggeImage from "../assets/project-hygge.png";
 import spilcafeenImage from "../assets/project-spilcafeen.png";
 import botanicalImage from "../assets/project-botanical.png";
+import { Link } from "react-router-dom";
 
 const projectImages = [blaSolImage, hyggeImage, spilcafeenImage, botanicalImage];
 
@@ -22,14 +23,21 @@ function Projects() {
       <h1>PR<span>O</span>JECTS</h1>
       <div className={styles.grid}>
         {projects.map((project, index) => <article key={project.title}>
-          <div
+          {project.tone === "garden" ? <Link
+            to="/projects/botanical-garden"
+            className={styles.mockup}
+            style={{ backgroundImage: `url(${projectImages[index]})` }}
+          >
+            <img src={projectImages[index]} alt={`${project.title} project mockup`} />
+            <span className={styles.hoverLabel}>View project</span>
+          </Link> : <div
             className={styles.mockup}
             tabIndex="0"
             style={{ backgroundImage: `url(${projectImages[index]})` }}
           >
             <img src={projectImages[index]} alt={`${project.title} project mockup`} />
             <span className={styles.hoverLabel}>View project</span>
-          </div>
+          </div>}
           <p><b>{project.title}</b> – {project.subtitle}</p>
           <i className={index % 2 ? styles.yellow : styles.blue} />
         </article>)}
