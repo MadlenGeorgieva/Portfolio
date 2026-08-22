@@ -1,4 +1,6 @@
 .home {
+  display: block;
+  position: relative;
   width: 100%;
   min-height: 100vh;
   padding: 0;
@@ -7,6 +9,25 @@
   color: #111;
 
   overflow-x: hidden;
+}
+
+.pageLink {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  display: block;
+  background: transparent;
+  cursor: pointer;
+}
+
+.pageLink:focus-visible {
+  outline: 3px solid #0878ee;
+  outline-offset: -5px;
+}
+
+.home:hover .arrow,
+.home:focus-within .arrow {
+  transform: translate(4px, -4px);
 }
 
 /* =========================
@@ -249,10 +270,10 @@ the reference.
 .nameText {
   fill: #111;
 
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 700;
 
-  letter-spacing: 1px;
+  letter-spacing: 1.3px;
 }
 
 /* =========================
@@ -332,6 +353,9 @@ the reference.
   padding: 0 48px 0 54px;
 
   background: #f3f3f3;
+  color: #111;
+  text-decoration: none;
+  text-decoration: none;
 }
 
 .arrow {
@@ -361,6 +385,16 @@ the reference.
 .arrow:hover,
 .arrow:focus-visible {
   transform: translate(4px, -4px);
+}
+
+.skillsBar:hover .arrow,
+.skillsBar:focus-visible .arrow {
+  transform: translate(4px, -4px);
+}
+
+.skillsBar:focus-visible {
+  outline: 3px solid #0878ee;
+  outline-offset: -5px;
 }
 
 .arrow:focus-visible {

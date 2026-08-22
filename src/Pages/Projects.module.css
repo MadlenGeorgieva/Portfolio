@@ -9,7 +9,7 @@
 
 .main>h1,.grid{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}.main>h1{margin-bottom:45px}.grid p{font-size:1rem;line-height:1.35}
 
-.main::before,.main::after,.grid article>i{display:none}
+.grid article>i{display:none}.main::before,.main::after{display:block;content:"";position:absolute;z-index:1;width:16px;height:16px;border-radius:50%;pointer-events:none}.main::before{top:165px;right:105px;left:auto;background:#ffbd00;box-shadow:18px 455px #ffbd00}.main::after{top:650px;left:105px;background:#0878ee;box-shadow:-18px -360px #0878ee}
 
 .dots{top:0}
 

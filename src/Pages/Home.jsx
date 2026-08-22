@@ -69,11 +69,11 @@ function Home() {
       </section>
 
       <section className={styles.skillsBar}>
-        <Link to="/about" className={styles.arrow} aria-label="Go to the About page">
+        <span className={styles.arrow} aria-hidden="true">
           <svg viewBox="0 0 64 64" aria-hidden="true">
             <path d="M13 51 51 13M22 13h29v29" />
           </svg>
-        </Link>
+        </span>
 
         <div className={styles.skillGroup}>
           <p>WEB &amp; MOBILE DESIGN</p>
@@ -94,6 +94,7 @@ function Home() {
           <span>PROTOTYPING</span>
         </div>
       </section>
+      <Link to="/about" className={styles.pageLink} aria-label="Go to the About page" />
     </main>
   );
 }

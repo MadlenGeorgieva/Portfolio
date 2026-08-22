@@ -71,6 +71,33 @@
   }
 }
 
+/* Shared inner-page footer: centered, evenly spaced, without circles. */
+.footer {
+  display: grid;
+  grid-template-columns: max-content 1px max-content 1px max-content;
+  justify-content: center;
+  column-gap: clamp(38px, 4vw, 78px);
+  padding-inline: 70px;
+}
+
+.icon {
+  width: auto;
+  height: auto;
+  min-width: 26px;
+  border-radius: 0;
+  background: transparent;
+  color: #0878ee;
+}
+
+.divider { height: 42px; }
+
+@media (max-width: 850px) {
+  .footer { display: flex; gap: 22px; padding: 28px; }
+  .icon { min-width: 26px; }
+}
+
+.footer .icon{display:none}
+
 .footer > .contactItem:nth-child(3) .icon,
 .footer > .contactItem:nth-child(5) .icon {
   font-size: 0;
