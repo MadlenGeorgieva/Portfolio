@@ -1,8 +1,29 @@
+import { useLayoutEffect } from "react";
+import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import styles from "./ProjectDetailTemplate.module.css";
 
 function ProjectDetailTemplate({ project }) {
+  useLayoutEffect(() => {
+    const previousRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+
+    const scrollToTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    scrollToTop();
+    const frame = window.requestAnimationFrame(scrollToTop);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.history.scrollRestoration = previousRestoration;
+    };
+  }, [project.slug]);
+
   return (
     <div className={styles.page}>
       <Header />
@@ -67,8 +88,14 @@ function ProjectDetailTemplate({ project }) {
               </article>
             ))}
           </div>
+          <div className={styles.backRow}>
+            <Link to="/projects" className={styles.backButton}>
+              <span aria-hidden="true">←</span> Back to projects
+            </Link>
+          </div>
         </section>
-        <div className={styles.dots} aria-hidden="true" />
+        <div className={`${styles.dots} ${styles.dotsLeft}`} aria-hidden="true" />
+        <div className={`${styles.dots} ${styles.dotsRight}`} aria-hidden="true" />
       </main>
       <Footer />
     </div>

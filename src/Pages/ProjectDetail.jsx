@@ -1,5 +1,5 @@
-import ProjectDetailTemplate from "../Components/ProjectDetailTemplate";
-import { botanicalGardenProject } from "../data/projects";
+import ProjectDetailTemplate from "../Components/ProjectDetailTemplate.jsx";
+import { botanicalGardenProject } from "../data/projects.js";
 
 function ProjectDetail() {
   return <ProjectDetailTemplate project={botanicalGardenProject} />;

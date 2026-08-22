@@ -26,3 +26,17 @@
 .overviewGrid{margin-top:58px;margin-bottom:96px}.processHeading{margin-top:110px!important}.processList{margin-top:55px}
 
 .contentSection{padding-top:45px}
+
+.backRow{width:100%;display:flex;justify-content:center;margin:0 0 90px}.backButton{display:inline-flex;align-items:center;gap:12px;padding:15px 26px;border:2px solid #090909;border-radius:999px;color:#090909;text-decoration:none;font-size:1rem;font-weight:700;transition:color .2s ease,background .2s ease,transform .2s ease}.backButton span{font-size:1.35em;line-height:1}.backButton:hover,.backButton:focus-visible{background:#090909;color:#fff;transform:translateY(-2px)}.backButton:focus-visible{outline:3px solid #ffbd00;outline-offset:4px}@media(prefers-reduced-motion:reduce){.backButton{transition:none}}
+
+.page main{padding-left:39px}.titleRow h1{font-size:clamp(4rem,6.8vw,6.75rem)}.dotsLeft{left:5px;right:auto}.dotsRight{right:5px;left:auto}@media(max-width:760px){.page main{padding-left:27px}}
+
+.dots{top:clamp(360px,56vw,760px)}
+
+.page main{padding-inline:0}.hero{width:100%}.intro,.contentSection{padding-inline:clamp(34px,6vw,90px)}
+
+.dots{width:39px;left:auto;right:0;background-position:center top}.dotsLeft{left:0;right:auto}.dotsRight{right:0;left:auto}@media(max-width:760px){.dots{width:30px}}
+
+.intro,.contentSection{max-width:1360px;padding-inline:80px}.titleRow h1{font-size:clamp(5.25rem,7.8vw,8rem)}@media(max-width:760px){.intro,.contentSection{padding-inline:50px}.titleRow h1{font-size:clamp(3.5rem,14vw,5.25rem)}}
+
+.dots{width:65px}.intro,.contentSection{max-width:1390px;padding-inline:95px}@media(max-width:760px){.dots{width:30px}.intro,.contentSection{padding-inline:45px}}

@@ -14,6 +14,7 @@
    ========================= */
 
 .hero {
+  position: relative;
   width: 100%;
   height: calc(100vh - 100px);
   min-height: 590px;
@@ -106,6 +107,25 @@
   line-height: 1.16;
   font-weight: 400;
 }
+
+.frameDots {
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  bottom: 0;
+  width: 65px;
+  background-image: radial-gradient(circle, #111 4px, transparent 4.5px);
+  background-size: 13px 18px;
+  background-position: center top;
+  pointer-events: none;
+}
+
+.frameDotsLeft { left: 0; }
+.frameDotsRight { right: 0; }
+
+.heroLeft { padding-left: 95px; }
+.heroRight { margin-right: 65px; }
+.skillsBar { padding-left: 95px; padding-right: 95px; }
 
 .intro .year {
   margin: 0 0 18px;
@@ -502,7 +522,7 @@ the reference.
   .heroLeft {
     min-height: 610px;
 
-    padding: 35px 22px;
+    padding: 35px 45px;
   }
 
   .heroRight {
@@ -544,4 +564,41 @@ the reference.
   .divider {
     display: none;
   }
+
+  .frameDots { width: 30px; background-size: 10px 14px; }
+  .heroRight { margin-right: 30px; }
 }
+
+/* Keep landing content aligned to the shared five-column frame. */
+.heroLeft { padding-left: 95px; }
+.skillsBar { padding-left: 95px; padding-right: 95px; }
+
+@media (max-width: 700px) {
+  .heroLeft { padding-left: 45px; padding-right: 45px; }
+  .skillsBar { padding-left: 45px; padding-right: 45px; }
+}
+
+/* Balanced landing-page footer navigation. */
+.skillsBar{grid-template-columns:56px repeat(3,minmax(0,1fr));column-gap:clamp(28px,3.2vw,58px)}.arrow{width:56px;height:56px}.arrow path{stroke-width:11}.skillGroup{position:relative;text-align:center}.skillGroup+.divider{display:none}.skillGroup:not(:last-child)::after{content:"";position:absolute;top:50%;right:clamp(-29px,-1.6vw,-14px);width:1px;height:50px;background:#777;transform:translate(50%,-50%)}
+
+@media(max-width:700px){.skillsBar{grid-template-columns:1fr;row-gap:22px}.skillGroup{text-align:left}.skillGroup::after{display:none}}
+
+@media(min-width:701px){.skillsBar{grid-template-columns:56px repeat(3,minmax(180px,250px));justify-content:center;column-gap:24px}.skillGroup:not(:last-child)::after{right:-12px}}
+
+.arrow path{stroke-linecap:round;stroke-linejoin:round}.arrow{justify-self:start}
+
+@media(min-width:1100px){.skillsBar{grid-template-columns:56px 1fr repeat(3,210px);justify-content:stretch;column-gap:48px;padding-right:70px}.skillGroup:first-of-type{grid-column:3}.skillGroup:not(:last-child)::after{right:-24px}}
+
+@media(min-width:951px) and (max-width:1099px){.skillsBar{grid-template-columns:56px 1fr repeat(3,210px);column-gap:18px;padding-right:45px}.skillGroup:first-of-type{grid-column:3}.skillGroup:not(:last-child)::after{right:-9px}.skillGroup p,.skillGroup span{font-size:1rem}}
+
+.skillGroup p,.skillGroup span{white-space:nowrap}
+
+@media(min-width:1400px){.skillsBar{grid-template-columns:56px 1fr repeat(3,280px);column-gap:48px;padding-right:70px}.skillGroup:not(:last-child)::after{right:-24px}}
+
+@media(min-width:1100px) and (max-width:1399px){.skillsBar{grid-template-columns:56px 1fr repeat(3,240px);column-gap:24px;padding-right:60px}.skillGroup:not(:last-child)::after{right:-12px}}
+
+.yellowShape{height:calc(min(54.7%,358px) + 2px)}.blueShape{top:51.5%;border-bottom-left-radius:100%}
+
+@media(min-width:1400px) and (max-height:1100px){.yellowShape{height:360px}.blueShape{top:330px}}
+
+@media(min-width:701px) and (max-width:950px){.skillsBar{grid-template-columns:48px repeat(3,minmax(130px,1fr));padding-inline:45px;column-gap:16px}.arrow{width:48px;height:48px}.skillGroup:not(:last-child)::after{right:-8px}}

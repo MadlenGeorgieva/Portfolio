@@ -63,12 +63,9 @@ function Home() {
 
           <div className={styles.uxBadge}>UX/UI</div>
 
-          <div className={styles.dots} aria-hidden="true">
-            {Array.from({ length: 36 }).map((_, index) => (
-              <span key={index}></span>
-            ))}
-          </div>
         </div>
+        <div className={`${styles.frameDots} ${styles.frameDotsLeft}`} aria-hidden="true" />
+        <div className={`${styles.frameDots} ${styles.frameDotsRight}`} aria-hidden="true" />
       </section>
 
       <section className={styles.skillsBar}>

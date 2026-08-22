@@ -37,7 +37,8 @@ function AboutPage() {
           ))}
           <i className={styles.mapBlue} /><i className={styles.mapYellow} />
         </section>
-        <div className={styles.dots} aria-hidden="true" />
+        <div className={`${styles.dots} ${styles.dotsLeft}`} aria-hidden="true" />
+        <div className={`${styles.dots} ${styles.dotsRight}`} aria-hidden="true" />
       </main>
 
       <Footer />

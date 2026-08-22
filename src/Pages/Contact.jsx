@@ -1,4 +1,5 @@
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import styles from "./Contact.module.css";
 
 function Contact() {
@@ -11,8 +12,10 @@ function Contact() {
         <a href="tel:+4571817500"><span>(+45) 71817500<br />(+359) 879206069</span><b aria-label="Phone">☎</b></a>
         <a href="mailto:madlengeorgieva2005@gmail.com"><span>madlengeorgieva2005@gmail.com<br />eaa25mage@students.eaaa.dk</span><b>✉</b></a>
       </section>
-      <div className={styles.dots} aria-hidden="true" />
+      <div className={`${styles.dots} ${styles.dotsLeft}`} aria-hidden="true" />
+      <div className={`${styles.dots} ${styles.dotsRight}`} aria-hidden="true" />
     </main>
+    <Footer />
   </div>;
 }
 

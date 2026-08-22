@@ -42,7 +42,8 @@ function Projects() {
           <i className={index % 2 ? styles.yellow : styles.blue} />
         </article>)}
       </div>
-      <div className={styles.dots} aria-hidden="true" />
+      <div className={`${styles.dots} ${styles.dotsLeft}`} aria-hidden="true" />
+      <div className={`${styles.dots} ${styles.dotsRight}`} aria-hidden="true" />
     </main>
     <Footer />
   </div>;

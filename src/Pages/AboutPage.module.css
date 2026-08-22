@@ -7,7 +7,7 @@
 .header nav a::after { content:""; position:absolute; left:0; bottom:0; width:100%; height:4px; border-radius:5px; background:#ffbd00; }
 .header nav .active::after { background:#0878ee; }
 .main { position:relative; min-height:780px; padding:22px 82px 35px 42px; display:grid; grid-template-columns:minmax(560px,1fr) minmax(620px,1fr); overflow:visible; background:#f4f4f4; }
-.intro h1 { margin:0; white-space:nowrap; font-size:clamp(8rem,11vw,12rem); line-height:.9; letter-spacing:-.065em; font-weight:900; }
+.intro h1 { margin:0; white-space:nowrap; font-size:clamp(4.5rem,7vw,7rem); line-height:.9; letter-spacing:-.065em; font-weight:900; }
 .intro h1 span,.intro h1 i { color:#ffbd00; font-style:normal; }
 .intro h1 i { margin-left:25px; font-size:.55em; vertical-align:25%; }
 .intro > p { width:520px; max-width:95%; margin:34px 0 0; font-size:1.35rem; line-height:1.5; }
@@ -34,4 +34,25 @@
 .footer > * { min-height:42px; padding:0 25px; display:flex; align-items:center; gap:12px; color:#111; text-decoration:none; border-left:1px solid #777; font-size:.82rem; }
 .footer > :first-child { padding-left:0; border-left:0; }
 .footer b { width:35px; aspect-ratio:1; flex:none; display:grid; place-items:center; border-radius:50%; background:#0878ee; color:#fff; font-size:1.2rem; }
+
+.main{padding-inline:80px;grid-template-columns:minmax(500px,1fr) minmax(620px,1fr);column-gap:clamp(30px,5vw,80px)}.intro h1{font-size:clamp(5.25rem,7.8vw,8rem)}.portraitArea,.skillMap{transform:none}.dots{width:39px;right:0;background-position:center top}.dotsLeft{left:0;right:auto}.dotsRight{right:0;left:auto}
+
+/* Shared framed-page proportions */
+.main{min-height:700px;grid-template-columns:500px 640px;justify-content:center;column-gap:60px;padding-block:18px 25px}.intro>p{width:500px;margin-top:26px;font-size:1.2rem;line-height:1.42}.portraitArea{height:285px;margin-top:4px}.portrait{left:115px;width:250px}.badge{left:292px;width:82px}.blueTwo{left:390px}.yellowTwo{left:375px}.skillMap{width:640px;min-width:640px;height:650px}.circle{width:300px;padding:38px}.soft{top:0}.hard{top:175px}.tools{top:350px}.circle h2{font-size:1.35rem}.circle ul{font-size:1rem;line-height:1.2}
+
+.main{min-height:650px;grid-template-columns:500px 570px;column-gap:20px;padding-top:10px}.skillMap{width:570px;min-width:570px;height:600px}.soft{top:0}.hard{top:145px}.tools{top:290px}.intro>p{margin-top:20px}.portraitArea{margin-top:0}
+
+/* Align the page title to the shared 1200px framed-content guide. */
+.intro h1{transform:translateX(-55px)}
+
+.dots{top:0}
+
+/* Compact one-screen composition based on the portfolio layout. */
+.main{grid-template-columns:500px 550px;column-gap:30px;min-height:640px;padding-right:95px}.skillMap{width:550px;min-width:550px;height:570px}.soft{top:0}.hard{top:130px}.tools{top:260px}.dotsLeft,.dotsRight{display:block}.portraitArea{height:270px}.portrait{width:235px}.badge{left:280px;width:78px}
+
+.skillMap{height:620px}.soft{top:0;z-index:3}.hard{top:160px;z-index:4}.tools{top:320px;z-index:3}
+
+.main{padding-left:95px;padding-right:95px}.dots{width:65px}
+
+.intro>p{transform:translateX(-55px)}.intro,.skillMap{position:relative;z-index:1}.main::before,.main::after{display:none}
 .footer > :nth-child(2) b,.footer > :nth-child(3) b{font-size:0}.footer > :nth-child(2) b::before{content:"☎";font-size:1.15rem}.footer > :nth-child(3) b::before{content:"✉";font-size:1.15rem}
