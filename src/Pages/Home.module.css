@@ -1005,7 +1005,7 @@ the reference.
   }
 
   .portfolioTitle h1 {
-    font-size: clamp(4.1rem, 23.3vw, 6.4rem);
+    font-size: clamp(4.1rem, calc(29vw - 26px), 6.4rem);
     line-height: .9;
   }
 
@@ -1071,7 +1071,7 @@ the reference.
   .skillsBar {
     width: auto;
     min-height: clamp(48px, 15vw, 64px);
-    margin-left: 15px;
+    margin-left: 45px;
     margin-right: 45px;
     grid-template-columns: 36px repeat(3, minmax(0, 1fr));
     column-gap: clamp(4px, 1.5vw, 8px);
