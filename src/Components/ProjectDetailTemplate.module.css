@@ -53,3 +53,32 @@
 /* Match the shared dotted frame used by every portfolio page. */
 .dots{background-image:radial-gradient(circle,#111 3px,transparent 4px);background-size:13px 13px;background-position:center top}
 @media(max-width:760px){.dots{background-image:radial-gradient(circle,#111 2px,transparent 2.5px);background-size:10px 10px}}
+
+@media(max-width:700px){
+  .page{width:100%;overflow-x:hidden}
+  .hero{width:calc(100% - 90px);height:230px;min-height:0;border-radius:24px}
+  .hero img{object-position:center}
+  .intro,.contentSection{width:100%;padding-inline:45px}
+  .intro{padding-top:34px;padding-bottom:44px}
+  .titleRow{display:block}
+  .titleRow h1{max-width:100%;font-size:clamp(2.55rem,13vw,3.4rem);line-height:.88;letter-spacing:-.055em;overflow-wrap:normal}
+  .titleRow>p{margin:18px 0 0;font-size:.92rem}
+  .tagline{margin-top:28px;font-size:1rem;line-height:1.4}
+  .contentSection{padding-top:20px}
+  .contentSection h2{font-size:clamp(2rem,10vw,2.7rem)}
+  .overviewGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:32px 0 62px}
+  .overviewCircle{padding:12%}
+  .overviewCircle h3{font-size:.76rem}.overviewCircle p{margin-top:8px;font-size:.7rem;line-height:1.12}
+  .focusIcons{width:88%;gap:4px;margin-top:7px}.focusIcons img{width:23px;height:23px}
+  .copyGrid{gap:34px}.copyGrid h3{margin-bottom:9px;font-size:1.15rem}.copyGrid p{font-size:.96rem;line-height:1.42}
+  .processHeading{margin-top:68px!important}
+  .processList{gap:38px;margin:34px 0 70px}
+  .processStep{min-height:360px;align-items:flex-start}
+  .processCard,.processRight .processCard,.processLeft .processCard{width:100%;height:auto;min-height:325px;padding:28px 22px 108px;text-align:left;border-radius:28px}
+  .stepNumber{font-size:.72rem}.processCard h3{font-size:1.45rem}.stepText{font-size:.9rem;line-height:1.35}
+  .processImage{width:132px;height:132px;bottom:0}
+  .processLeft .processImage{left:auto!important;right:12px!important}
+  .processRight .processImage{left:12px!important;right:auto!important}
+  .backRow{margin-bottom:60px}.backButton{padding:12px 20px;font-size:.9rem}
+  .dots{width:30px}
+}

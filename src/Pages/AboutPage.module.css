@@ -75,4 +75,23 @@
 
 .portrait{bottom:10px}
 .badge{bottom:2px}
+
+@media(max-width:700px){
+  .page{width:100%;min-width:0;height:auto;min-height:100vh;overflow-x:hidden;overflow-y:visible;display:block}
+  .page>header,.page>footer{height:auto}
+  .main{display:block;width:100%;height:auto;min-height:0;padding:24px 45px 48px;overflow:visible}
+  .intro h1{transform:none;font-size:clamp(3rem,15vw,3.6rem);white-space:nowrap}
+  .intro h1 i{margin-left:10px}
+  .intro>p{width:100%;max-width:none;margin-top:20px;transform:none;font-size:1rem;line-height:1.42}
+  .portraitArea{height:285px;margin-top:18px}
+  .portrait{left:50%;bottom:20px;width:210px;transform:translateX(-55%)}
+  .badge{left:calc(50% + 42px);bottom:8px;width:72px;font-size:.95rem}
+  .yellowOne{left:5%;top:34px}.blueOne{left:15%;top:29px}.blueTwo{left:auto;right:4%;top:72px}.yellowTwo{left:auto;right:8%;bottom:36px}
+  .skillMap{width:100%;min-width:0;height:665px;margin:12px 0 0}
+  .circle{width:230px;padding:25px}
+  .soft{top:0;right:0;left:auto}.hard{top:205px;left:0}.tools{top:410px;right:0}
+  .circle h2{font-size:1.08rem}.circle ul{font-size:.83rem;line-height:1.2}
+  .main::before{left:10%;top:48%;width:14px;height:14px}.main::after{right:10%;top:68%;width:17px;height:17px}
+  .dots{width:30px;background-image:radial-gradient(circle,#111 2px,transparent 2.5px);background-size:10px 10px}
+}
 .footer > :nth-child(2) b,.footer > :nth-child(3) b{font-size:0}.footer > :nth-child(2) b::before{content:"☎";font-size:1.15rem}.footer > :nth-child(3) b::before{content:"✉";font-size:1.15rem}

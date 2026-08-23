@@ -104,6 +104,13 @@
 
 @media(max-width:850px){.footer{width:calc(100% - 90px)}}
 
+@media(max-width:700px){
+  .footer{width:calc(100% - 90px);min-height:0;display:flex;align-items:center;gap:14px;padding:22px 8px}
+  .contactItem{width:100%;justify-content:flex-start;gap:10px;font-size:.78rem;overflow-wrap:anywhere}
+  .contactItem p{min-width:0}
+  .icon{min-width:24px}
+}
+
 .footer > .contactItem:nth-child(3) .icon,
 .footer > .contactItem:nth-child(5) .icon {
   font-size: 0;

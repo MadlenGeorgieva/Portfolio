@@ -645,3 +645,402 @@ the reference.
 @media(max-width:700px){.skillsBar{width:calc(100% - 90px)}}
 
 @media(min-width:701px) and (max-width:950px){.skillsBar{grid-template-columns:48px repeat(3,minmax(130px,1fr));padding-inline:45px;column-gap:16px}.arrow{width:48px;height:48px}.skillGroup:not(:last-child)::after{right:-8px}}
+
+@media(max-width:700px){
+  .home{min-height:100vh;overflow-x:hidden}
+  .hero{display:block;height:auto;min-height:0}
+  .heroLeft{min-height:455px;padding:28px 45px 24px;justify-content:space-between}
+  .portfolioTitle h1{font-size:clamp(4.1rem,20vw,5.25rem)}
+  .intro{width:100%;margin:0}
+  .introLine{width:100%;margin-bottom:16px}
+  .intro .year{font-size:clamp(3.2rem,16vw,4rem);margin-bottom:12px}
+  .intro p{font-size:1rem;line-height:1.28}
+  .heroRight{height:420px;min-height:420px;margin-right:30px;overflow:hidden}
+  .yellowShape{width:88px;height:225px}
+  .blueShape{top:215px;width:135px}
+  .profileCircle{top:72px;left:50%;width:230px;transform:translateX(-50%)}
+  .nameTextSvg{top:39px;left:50%;width:286px;transform:translateX(-50%)}
+  .uxBadge{right:2%;bottom:20px;width:78px;height:78px;font-size:1.25rem}
+  .skillsBar{width:calc(100% - 90px);grid-template-columns:1fr;row-gap:16px;padding:22px 8px}
+  .arrow{width:48px;height:48px}
+  .skillGroup{text-align:left}
+  .skillGroup p,.skillGroup span{font-size:.92rem;white-space:normal}
+}
+
+/* Final responsive landing composition. */
+@media (max-width: 700px) {
+  .home {
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .hero {
+    min-height: 0;
+    height: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto clamp(300px, 39svh, 340px) auto;
+    align-content: start;
+    row-gap: clamp(16px, 4.5svh, 40px);
+    padding: 22px 45px 16px;
+  }
+
+  .heroLeft {
+    display: contents;
+  }
+
+  .portfolioTitle {
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .portfolioTitle h1 {
+    font-size: clamp(3.7rem, 18.5vw, 5rem);
+    line-height: .9;
+  }
+
+  .heroRight {
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    margin: 0;
+    overflow: visible;
+    contain: layout;
+  }
+
+  .yellowShape {
+    top: 24px;
+    left: -30px;
+    width: clamp(82px, 27vw, 105px);
+    height: clamp(155px, 45vw, 190px);
+  }
+
+  .blueShape {
+    top: clamp(169px, 47vw, 201px);
+    left: -30px;
+    width: clamp(112px, 36vw, 142px);
+  }
+
+  .profileCircle {
+    top: clamp(69px, 17vw, 82px);
+    left: 48%;
+    width: clamp(184px, 57vw, 225px);
+  }
+
+  .nameTextSvg {
+    top: clamp(38px, 9vw, 46px);
+    left: 50%;
+    width: clamp(230px, 70vw, 278px);
+  }
+
+  .nameText {
+    font-size: 23px;
+  }
+
+  .uxBadge {
+    right: -4px;
+    bottom: 7px;
+    width: clamp(58px, 18vw, 70px);
+    height: clamp(58px, 18vw, 70px);
+    font-size: clamp(.95rem, 4vw, 1.15rem);
+  }
+
+  .intro {
+    grid-row: 3;
+    width: min(100%, 230px);
+    align-self: end;
+  }
+
+  .intro .year {
+    margin: 0 0 9px;
+    font-size: clamp(2.8rem, 14vw, 3.6rem);
+  }
+
+  .introLine {
+    width: min(100%, 180px);
+    margin-bottom: 10px;
+  }
+
+  .intro p {
+    font-size: clamp(.72rem, 3vw, .9rem);
+    line-height: 1.18;
+  }
+
+  .skillsBar {
+    position: relative;
+    z-index: 7;
+    width: calc(100% - 90px);
+    min-height: 64px;
+    grid-template-columns: 40px repeat(3, minmax(0, 1fr));
+    column-gap: 7px;
+    row-gap: 0;
+    padding: 7px 0;
+  }
+
+  .arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .skillGroup {
+    min-width: 0;
+    text-align: center;
+  }
+
+  .skillGroup p,
+  .skillGroup span {
+    display: block;
+    white-space: normal;
+    font-size: clamp(.42rem, 1.75vw, .58rem);
+    line-height: 1.1;
+  }
+
+  .skillGroup p {
+    margin-bottom: 2px;
+  }
+}
+
+@media (max-width: 370px) {
+  .hero {
+    padding: 16px 32px 14px;
+    grid-template-rows: auto 292px auto;
+  }
+
+  .portfolioTitle h1 {
+    font-size: clamp(3.55rem, 21vw, 3.9rem);
+  }
+
+  .heroRight {
+    min-height: 292px;
+  }
+
+  .profileCircle {
+    width: min(62vw, 190px);
+  }
+
+  .nameTextSvg {
+    width: min(76vw, 238px);
+  }
+
+  .yellowShape,
+  .blueShape {
+    left: -17px;
+  }
+
+  .skillsBar {
+    width: calc(100% - 64px);
+  }
+}
+
+@media (max-width: 700px) and (max-height: 650px) {
+  .home {
+    min-height: 650px;
+  }
+
+  .hero {
+    grid-template-rows: auto 270px auto;
+  }
+
+  .heroRight {
+    min-height: 270px;
+  }
+
+  .profileCircle {
+    top: 58px;
+    width: min(52vw, 190px);
+  }
+
+  .nameTextSvg {
+    top: 30px;
+    width: min(66vw, 238px);
+  }
+
+  .uxBadge {
+    bottom: 4px;
+  }
+}
+
+/* Prevent the landing composition from feeling undersized on large displays. */
+@media (min-width: 1600px) and (min-height: 900px) {
+  .heroLeft {
+    padding-left: clamp(120px, 8vw, 180px);
+    padding-top: clamp(70px, 8vh, 120px);
+  }
+
+  .portfolioTitle h1 {
+    font-size: clamp(12rem, 13vw, 16rem);
+  }
+
+  .intro {
+    width: clamp(320px, 20vw, 410px);
+  }
+
+  .introLine {
+    width: 100%;
+  }
+
+  .intro p {
+    font-size: clamp(1.25rem, 1.2vw, 1.6rem);
+  }
+
+  .heroRight {
+    margin-right: 65px;
+  }
+
+  .yellowShape {
+    width: clamp(190px, 12vw, 250px);
+    height: 55%;
+  }
+
+  .blueShape {
+    top: 51.5%;
+    width: clamp(255px, 16vw, 335px);
+  }
+
+  .profileCircle {
+    top: 20%;
+    left: 12%;
+    width: clamp(350px, 22vw, 460px);
+  }
+
+  .nameTextSvg {
+    top: 12%;
+    left: 12%;
+    width: clamp(430px, 27vw, 565px);
+  }
+
+  .uxBadge {
+    width: clamp(130px, 8.5vw, 175px);
+    height: clamp(130px, 8.5vw, 175px);
+    font-size: clamp(2rem, 2vw, 2.7rem);
+  }
+}
+
+/* One consistent composition across all phone widths. */
+@media (max-width: 700px) {
+  .home {
+    min-height: 100svh;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .hero {
+    min-height: 0;
+    grid-template-rows:
+      auto
+      clamp(275px, 88vw, 355px)
+      auto;
+    padding: clamp(20px, 6vw, 28px) 45px 12px;
+  }
+
+  .frameDotsLeft {
+    display: block;
+  }
+
+  .portfolioTitle h1 {
+    font-size: clamp(3.7rem, 20.5vw, 5.35rem);
+    line-height: .9;
+  }
+
+  .heroRight {
+    min-height: clamp(275px, 88vw, 355px);
+  }
+
+  .yellowShape {
+    top: clamp(28px, 8vw, 36px);
+    left: -5px;
+    width: clamp(82px, 28vw, 112px);
+    height: clamp(155px, 52vw, 205px);
+  }
+
+  .blueShape {
+    top: clamp(180px, 59vw, 232px);
+    left: -5px;
+    width: clamp(110px, 37vw, 148px);
+  }
+
+  .profileCircle {
+    top: clamp(72px, 23vw, 92px);
+    left: 50%;
+    width: clamp(168px, 58vw, 232px);
+  }
+
+  .nameTextSvg {
+    top: clamp(44px, 14vw, 57px);
+    left: 53%;
+    width: clamp(214px, 74vw, 294px);
+  }
+
+  .nameText {
+    font-size: 23px;
+  }
+
+  .uxBadge {
+    right: 0;
+    bottom: -12px;
+    width: clamp(58px, 19vw, 76px);
+    height: clamp(58px, 19vw, 76px);
+  }
+
+  .intro {
+    width: min(64%, 210px);
+    margin-left: clamp(8px, 3vw, 14px);
+    padding-top: clamp(10px, 3vw, 16px);
+  }
+
+  .intro .year {
+    font-size: clamp(2.75rem, 15vw, 3.75rem);
+  }
+
+  .introLine {
+    width: 100%;
+  }
+
+  .intro p {
+    font-size: clamp(.7rem, 2.9vw, .88rem);
+  }
+
+  .skillsBar {
+    width: auto;
+    min-height: clamp(48px, 15vw, 64px);
+    margin-left: 15px;
+    margin-right: 45px;
+    grid-template-columns: 36px repeat(3, minmax(0, 1fr));
+    column-gap: clamp(4px, 1.5vw, 8px);
+    padding: 6px 0;
+  }
+
+  .arrow {
+    width: clamp(30px, 10vw, 40px);
+    height: clamp(30px, 10vw, 40px);
+  }
+
+  .skillGroup p,
+  .skillGroup span {
+    font-size: clamp(.5rem, 2vw, .64rem);
+    line-height: 1.12;
+  }
+}
+
+@media (max-width: 700px) and (max-height: 650px) {
+  .home {
+    min-height: 100svh;
+  }
+
+  .hero {
+    grid-template-rows: auto clamp(280px, 82vw, 315px) auto;
+  }
+
+  .heroRight {
+    min-height: clamp(280px, 82vw, 315px);
+  }
+
+  .profileCircle {
+    top: 68px;
+  }
+
+  .nameTextSvg {
+    top: 40px;
+  }
+}
