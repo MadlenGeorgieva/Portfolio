@@ -47,6 +47,9 @@
 
 .stackedTitle .titleWord{display:block}
 
+.focusIcons{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;width:78%;margin:10px auto 0}
+.focusIcons img{width:clamp(28px,3vw,44px);height:clamp(28px,3vw,44px);object-fit:contain}
+
 /* Match the shared dotted frame used by every portfolio page. */
 .dots{background-image:radial-gradient(circle,#111 3px,transparent 4px);background-size:13px 13px;background-position:center top}
 @media(max-width:760px){.dots{background-image:radial-gradient(circle,#111 2px,transparent 2.5px);background-size:10px 10px}}

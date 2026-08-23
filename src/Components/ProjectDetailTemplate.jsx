@@ -69,8 +69,14 @@ function ProjectDetailTemplate({ project }) {
                 key={item.label}
               >
                 <h3>{item.label}</h3>
-                {item.icon ? <span className={styles.focusIcon}>{item.icon}</span> : null}
-                <p>{item.value}</p>
+                {item.label === "FOCUS" && project.focusIcons ? (
+                  <div className={styles.focusIcons} aria-label="Project tools">
+                    {project.focusIcons.map((icon, iconIndex) => (
+                      <img src={icon} alt="" key={`${project.slug}-focus-${iconIndex}`} />
+                    ))}
+                  </div>
+                ) : item.icon ? <span className={styles.focusIcon}>{item.icon}</span> : null}
+                {item.label === "FOCUS" && project.focusIcons ? null : <p>{item.value}</p>}
               </article>
             ))}
           </div>
