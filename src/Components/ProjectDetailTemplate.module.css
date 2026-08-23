@@ -40,3 +40,9 @@
 .intro,.contentSection{max-width:1360px;padding-inline:80px}.titleRow h1{font-size:clamp(5.25rem,7.8vw,8rem)}@media(max-width:760px){.intro,.contentSection{padding-inline:50px}.titleRow h1{font-size:clamp(3.5rem,14vw,5.25rem)}}
 
 .dots{width:65px}.intro,.contentSection{max-width:1390px;padding-inline:95px}@media(max-width:760px){.dots{width:30px}.intro,.contentSection{padding-inline:45px}}
+
+.dots{position:fixed;top:0;bottom:0}.hero{width:calc(100% - 190px);max-width:1200px;margin-inline:auto;border-radius:40px}
+
+@media(max-width:760px){.hero{width:calc(100% - 90px);border-radius:24px}}
+
+.stackedTitle .titleWord{display:block}

@@ -67,7 +67,7 @@
 @media (max-width: 700px) {
   .header {
     height: auto;
-    padding: 20px;
+    padding: 20px 45px;
     flex-direction: column;
     gap: 20px;
   }

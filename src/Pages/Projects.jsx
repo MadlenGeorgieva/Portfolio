@@ -6,6 +6,7 @@ import hyggeImage from "../assets/project-hygge.png";
 import spilcafeenImage from "../assets/project-spilcafeen.png";
 import botanicalImage from "../assets/project-botanical.png";
 import { Link } from "react-router-dom";
+import { useLayoutEffect } from "react";
 
 const projectImages = [blaSolImage, hyggeImage, spilcafeenImage, botanicalImage];
 
@@ -17,6 +18,12 @@ const projects = [
 ];
 
 function Projects() {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
   return <div className={styles.page}>
     <Header />
     <main className={styles.main}>

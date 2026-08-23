@@ -46,7 +46,7 @@ function Home() {
             <defs>
               <path
                 id="nameCurve"
-                d="M 160 18 A 142 142 0 0 1 302 160"
+                d="M 160 30 A 130 130 0 0 1 225 272.6"
                 fill="none"
               />
             </defs>
@@ -55,6 +55,9 @@ function Home() {
               <textPath
                 href="#nameCurve"
                 startOffset="0%"
+                textAnchor="start"
+                textLength="285"
+                lengthAdjust="spacingAndGlyphs"
               >
                 MADLEN GEORGIEVA
               </textPath>

@@ -254,7 +254,7 @@ the reference.
 .nameTextSvg {
   position: absolute;
 
-  top: 13.5%;
+  top: 16%;
   left: 18.5%;
 
   width: min(72%, 400px);
@@ -270,8 +270,8 @@ the reference.
 .nameText {
   fill: #111;
 
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 800;
 
   letter-spacing: 1.3px;
 }
@@ -283,7 +283,7 @@ the reference.
 .uxBadge {
   position: absolute;
 
-  right: 7.7%;
+  right: 2%;
   bottom: 8%;
 
   width: 121px;
@@ -458,7 +458,7 @@ the reference.
   }
 
   .nameTextSvg {
-    top: 10.5vh;
+    top: 12.5vh;
     left: 13.2vh;
     width: 51.5vh;
   }
@@ -502,7 +502,7 @@ the reference.
   }
 
   .nameTextSvg {
-    top: 92px;
+    top: 108px;
     left: 56px;
     width: 400px;
   }
@@ -634,5 +634,10 @@ the reference.
 .yellowShape{height:calc(min(54.7%,358px) + 2px)}.blueShape{top:51.5%;border-bottom-left-radius:100%}
 
 @media(min-width:1400px) and (max-height:1100px){.yellowShape{height:360px}.blueShape{top:330px}}
+
+/* Continuous viewport frame and inset footer divider. */
+.frameDots{position:fixed;top:0;bottom:0}.hero{border-bottom:0}.skillsBar{width:calc(100% - 190px);border-top:1px solid #777}
+
+@media(max-width:700px){.skillsBar{width:calc(100% - 90px)}}
 
 @media(min-width:701px) and (max-width:950px){.skillsBar{grid-template-columns:48px repeat(3,minmax(130px,1fr));padding-inline:45px;column-gap:16px}.arrow{width:48px;height:48px}.skillGroup:not(:last-child)::after{right:-8px}}

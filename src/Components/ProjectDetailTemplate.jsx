@@ -34,12 +34,26 @@ function ProjectDetailTemplate({ project }) {
 
         <section className={styles.intro}>
           <div className={styles.titleRow}>
-            <h1 aria-label={project.title}>
-              {project.title.split("").map((letter, index) => (
-                letter.toUpperCase() === "O"
-                  ? <span className={styles.titleO} key={`${letter}-${index}`}>{letter}</span>
-                  : letter
-              ))}
+            <h1
+              aria-label={project.title}
+              className={["botanical-garden", "hidden-hygge-places"].includes(project.slug) ? styles.stackedTitle : undefined}
+            >
+              {(["botanical-garden", "hidden-hygge-places"].includes(project.slug)
+                ? project.title.split(" ").map((word, wordIndex) => (
+                    <span className={styles.titleWord} key={word}>
+                      {word.split("").map((letter, letterIndex) => (
+                        letter.toUpperCase() === "O"
+                          ? <span className={styles.titleO} key={`${letter}-${letterIndex}`}>{letter}</span>
+                          : letter
+                      ))}
+                      {wordIndex < project.title.split(" ").length - 1 ? " " : null}
+                    </span>
+                  ))
+                : project.title.split("").map((letter, index) => (
+                    letter.toUpperCase() === "O"
+                      ? <span className={styles.titleO} key={`${letter}-${index}`}>{letter}</span>
+                      : letter
+                  )))}
             </h1>
             <p>{project.type}</p>
           </div>

@@ -57,4 +57,22 @@
 .intro>p{transform:translateX(-55px)}.intro,.skillMap{position:relative;z-index:1}.main::before,.main::after{content:"";display:block;position:absolute;z-index:0;border-radius:50%;pointer-events:none}.main::before{left:8%;top:520px;width:18px;height:18px;background:#ffbd00}.main::after{left:auto;right:8%;top:300px;width:22px;height:22px;background:#0878ee}
 
 .portrait{bottom:-30px}.badge{bottom:-38px}.yellowOne{left:98px;top:50px}.blueOne{left:128px;top:43px}
+
+.dots{position:fixed;top:0;bottom:0}
+
+/* Compact one-screen cascade with deliberately playful offsets. */
+.page{height:100vh;min-height:0;overflow:hidden;display:grid;grid-template-rows:95px minmax(0,1fr) 75px}
+.page>header{height:95px}
+.page>footer{height:75px;min-height:0}
+.main{min-height:0;height:auto;align-items:center;padding-block:4px}
+.skillMap{width:550px;min-width:550px;height:530px}
+.circle{width:265px;padding:27px}
+.soft{top:0;left:auto;right:75px;z-index:2}
+.hard{top:183px;left:53px;z-index:5}
+.tools{top:265px;right:0;z-index:2}
+.circle h2{font-size:1.25rem}
+.circle ul{font-size:.95rem;line-height:1.18}
+
+.portrait{bottom:10px}
+.badge{bottom:2px}
 .footer > :nth-child(2) b,.footer > :nth-child(3) b{font-size:0}.footer > :nth-child(2) b::before{content:"☎";font-size:1.15rem}.footer > :nth-child(3) b::before{content:"✉";font-size:1.15rem}

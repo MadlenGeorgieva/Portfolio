@@ -100,6 +100,10 @@
 
 .footer>.contactItem:nth-child(3) .icon,.footer>.contactItem:nth-child(5) .icon{font-size:1.1rem}.footer>.contactItem:nth-child(3) .icon::before,.footer>.contactItem:nth-child(5) .icon::before{content:none}
 
+.footer{width:calc(100% - 190px);margin-inline:auto}
+
+@media(max-width:850px){.footer{width:calc(100% - 90px)}}
+
 .footer > .contactItem:nth-child(3) .icon,
 .footer > .contactItem:nth-child(5) .icon {
   font-size: 0;
