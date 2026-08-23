@@ -862,6 +862,72 @@ the reference.
   }
 }
 
+/* Keep the desktop composition equally substantial on larger screens. */
+@media (min-width: 951px) {
+  .hero {
+    height: calc(100svh - 100px);
+    min-height: 590px;
+  }
+
+  .heroLeft {
+    padding-top: clamp(48px, 7vh, 100px);
+    padding-bottom: clamp(58px, 8vh, 105px);
+    padding-left: clamp(95px, 7vw, 175px);
+  }
+
+  .portfolioTitle h1 {
+    font-size: clamp(8rem, min(12.5vw, 20vh), 15rem);
+  }
+
+  .intro {
+    width: clamp(285px, 21vw, 410px);
+  }
+
+  .intro .year {
+    font-size: clamp(4.8rem, 8.2vh, 7rem);
+  }
+
+  .introLine {
+    width: 100%;
+  }
+
+  .intro p {
+    font-size: clamp(1.15rem, 1.2vw, 1.55rem);
+  }
+
+  .heroRight {
+    margin-right: 65px;
+  }
+
+  .yellowShape {
+    width: clamp(175px, 23vh, 260px);
+    height: 55%;
+  }
+
+  .blueShape {
+    top: 51.5%;
+    width: clamp(234px, 31vh, 350px);
+  }
+
+  .profileCircle {
+    top: 20%;
+    left: 15%;
+    width: clamp(322px, 42vh, 470px);
+  }
+
+  .nameTextSvg {
+    top: 12%;
+    left: 15%;
+    width: clamp(400px, 52vh, 580px);
+  }
+
+  .uxBadge {
+    width: clamp(121px, 16vh, 180px);
+    height: clamp(121px, 16vh, 180px);
+    font-size: clamp(2rem, 3vh, 2.75rem);
+  }
+}
+
 /* Prevent the landing composition from feeling undersized on large displays. */
 @media (min-width: 1600px) and (min-height: 900px) {
   .heroLeft {
@@ -939,12 +1005,13 @@ the reference.
   }
 
   .portfolioTitle h1 {
-    font-size: clamp(3.7rem, 20.5vw, 5.35rem);
+    font-size: clamp(4.1rem, 23.3vw, 6.4rem);
     line-height: .9;
   }
 
   .heroRight {
     min-height: clamp(275px, 88vw, 355px);
+    transform: translateY(-30px);
   }
 
   .yellowShape {
