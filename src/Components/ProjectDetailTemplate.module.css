@@ -46,3 +46,7 @@
 @media(max-width:760px){.hero{width:calc(100% - 90px);border-radius:24px}}
 
 .stackedTitle .titleWord{display:block}
+
+/* Match the shared dotted frame used by every portfolio page. */
+.dots{background-image:radial-gradient(circle,#111 3px,transparent 4px);background-size:13px 13px;background-position:center top}
+@media(max-width:760px){.dots{background-image:radial-gradient(circle,#111 2px,transparent 2.5px);background-size:10px 10px}}
