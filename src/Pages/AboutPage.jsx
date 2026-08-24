@@ -1,7 +1,22 @@
+import { useEffect, useState } from "react";
 import profileImage from "../assets/me.png";
+import bowlingImage from "../assets/about-bowling.jpg";
+import gymnasticsAwardImage from "../assets/about-gymnastics-award.jpg";
+import gymnasticsImage from "../assets/about-gymnastics.jpg";
+import debateImage from "../assets/about-debate.jpg";
+import theatreImage from "../assets/about-theatre.jpg";
+import teamVideo from "../assets/about-team-video.mp4";
+import forestImage from "../assets/about-volunteering-forest.jpg";
+import erasmusImage from "../assets/about-volunteering-erasmus.jpg";
+import firstAidImage from "../assets/about-volunteering-first-aid.jpg";
+import beachImage from "../assets/about-volunteering-beach.jpg";
+import wwfImage from "../assets/about-volunteering-wwf.jpg";
+import redCrossImage from "../assets/about-volunteering-red-cross.jpg";
+import redCrossEventImage from "../assets/about-volunteering-red-cross-event.jpg";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import styles from "./AboutPage.module.css";
+import storyStyles from "./AboutStory.module.css";
 
 const skills = [
   { className: "soft", icon: "♧", title: "SOFT SKILLS", items: ["Empathy", "Problem Solving", "Critical Thinking", "Collaboration", "Communication"] },
@@ -9,12 +24,56 @@ const skills = [
   { className: "tools", icon: "⚒", title: "TOOLS", items: ["Figma", "HTML/CSS", "JavaScript", "React", "WordPress", "Git/GitHub", "AI Workflows"] },
 ];
 
+const storyPhotos = [
+  { src: bowlingImage, alt: "Madlen with her bowling team after a competition" },
+  { src: gymnasticsAwardImage, alt: "Madlen receiving an award at a gymnastics competition" },
+  { src: gymnasticsImage, alt: "Madlen after a rhythmic gymnastics performance" },
+  { src: debateImage, alt: "Madlen taking part in a speeches and debates event" },
+  { src: theatreImage, alt: "Madlen performing with her Spanish theatre group" },
+];
+
+const volunteeringPhotos = [
+  { src: forestImage, alt: "Madlen taking part in an outdoor volunteering activity" },
+  { src: erasmusImage, alt: "Madlen with Erasmus Plus volunteers" },
+  { src: firstAidImage, alt: "Madlen helping during a youth first-aid activity" },
+  { src: beachImage, alt: "Madlen during an outdoor environmental activity" },
+  { src: wwfImage, alt: "Madlen participating in a WWF activity" },
+  { src: redCrossImage, alt: "Madlen volunteering with the Bulgarian Red Cross" },
+  { src: redCrossEventImage, alt: "Madlen at a Bulgarian Red Cross event" },
+];
+
+const galleryItems = [
+  { src: teamVideo, alt: "Video from Madlen's team activities", type: "video" },
+  ...storyPhotos.map((photo) => ({ ...photo, type: "image" })),
+  ...volunteeringPhotos.map((photo) => ({ ...photo, type: "image" })),
+];
+
 function AboutPage() {
+  const [activeIndex, setActiveIndex] = useState(null);
+  const activeMedia = activeIndex === null ? null : galleryItems[activeIndex];
+
+  useEffect(() => {
+    if (activeIndex === null) return undefined;
+
+    const navigateGallery = (event) => {
+      if (event.key === "Escape") setActiveIndex(null);
+      if (event.key === "ArrowRight") {
+        setActiveIndex((current) => (current + 1) % galleryItems.length);
+      }
+      if (event.key === "ArrowLeft") {
+        setActiveIndex((current) => (current - 1 + galleryItems.length) % galleryItems.length);
+      }
+    };
+
+    document.addEventListener("keydown", navigateGallery);
+    return () => document.removeEventListener("keydown", navigateGallery);
+  }, [activeIndex]);
+
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${storyStyles.page}`}>
       <Header />
 
-      <main className={styles.main}>
+      <main className={`${styles.main} ${storyStyles.main}`}>
         <section className={styles.intro}>
           <h1>AB<span>O</span>UT <i>•</i></h1>
           <p>I’m a UX/UI designer who enjoys turning complex ideas into clear, intuitive digital experiences. I combine curiosity, empathy, and creativity to design products that feel both useful and enjoyable.</p>
@@ -41,7 +100,139 @@ function AboutPage() {
         <div className={`${styles.dots} ${styles.dotsRight}`} aria-hidden="true" />
       </main>
 
+      <section className={storyStyles.storySection} aria-labelledby="team-story-title">
+        <div className={storyStyles.storyCopy}>
+          <p className={storyStyles.storyEyebrow}>BEYOND DESIGN</p>
+          <h2 id="team-story-title">Growing through teams</h2>
+          <p>
+            I’ve been part of different teams from a young age, starting with
+            sports like gymnastics, bowling, tennis, and swimming. Being active
+            taught me discipline, patience, teamwork, and how to stay motivated.
+            Later, in high school, I also joined a speeches and debates team,
+            eventually becoming a team leader, and took part in a Spanish theatre
+            group.
+          </p>
+        </div>
+
+        <div className={storyStyles.storyGallery} aria-label="Photos from Madlen's teams and activities">
+          <button
+            className={storyStyles.storyVideo}
+            type="button"
+            onClick={() => setActiveIndex(0)}
+            aria-label="Open team activities video"
+          >
+            <video autoPlay loop muted playsInline preload="metadata" aria-hidden="true">
+              <source src={teamVideo} type="video/mp4" />
+            </video>
+          </button>
+          {storyPhotos.map((photo, index) => (
+            <button
+              className={`${storyStyles.storyPhoto} ${storyStyles[`photo${index + 1}`]}`}
+              key={photo.src}
+              type="button"
+              onClick={() => setActiveIndex(index + 1)}
+              aria-label={`Open photo ${index + 1} of ${storyPhotos.length}`}
+            >
+              <img src={photo.src} alt={photo.alt} />
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className={`${storyStyles.storySection} ${storyStyles.volunteeringSection}`}
+        aria-labelledby="volunteering-story-title"
+      >
+        <div className={storyStyles.storyCopy}>
+          <p className={storyStyles.storyEyebrow}>CREATIVITY &amp; IMPACT</p>
+          <h2 id="volunteering-story-title">Learning by contributing</h2>
+          <p>
+            High school also gave me the chance to explore volunteering and more
+            creative challenges. I volunteered with the Bulgarian Red Cross,
+            mentored Erasmus+ volunteers in the ABS organization, and participated
+            in several hackathons, including ones organized by WWF, where my team
+            reached the finals. These experiences made me more confident,
+            open-minded, and comfortable working with different people.
+          </p>
+        </div>
+
+        <div
+          className={`${storyStyles.storyGallery} ${storyStyles.volunteeringGallery}`}
+          aria-label="Photos from Madlen's volunteering and creative activities"
+        >
+          {volunteeringPhotos.map((photo, index) => (
+            <button
+              className={`${storyStyles.storyPhoto} ${storyStyles[`volunteerPhoto${index + 1}`]}`}
+              key={photo.src}
+              type="button"
+              onClick={() => setActiveIndex(1 + storyPhotos.length + index)}
+              aria-label={`Open volunteering photo ${index + 1} of ${volunteeringPhotos.length}`}
+            >
+              <img src={photo.src} alt={photo.alt} />
+            </button>
+          ))}
+        </div>
+      </section>
+
       <Footer />
+
+      {activeMedia && (
+        <div
+          className={storyStyles.lightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Expanded gallery photo"
+          onClick={() => setActiveIndex(null)}
+        >
+          <button
+            className={storyStyles.lightboxClose}
+            type="button"
+            onClick={() => setActiveIndex(null)}
+            aria-label="Close enlarged photo"
+          >
+            ×
+          </button>
+          <button
+            className={`${storyStyles.lightboxArrow} ${storyStyles.lightboxPrevious}`}
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              setActiveIndex((activeIndex - 1 + galleryItems.length) % galleryItems.length);
+            }}
+            aria-label="Previous gallery item"
+          >
+            ‹
+          </button>
+          {activeMedia.type === "video" ? (
+            <video
+              className={storyStyles.lightboxVideo}
+              src={activeMedia.src}
+              controls
+              autoPlay
+              playsInline
+              onClick={(event) => event.stopPropagation()}
+            />
+          ) : (
+            <img
+              src={activeMedia.src}
+              alt={activeMedia.alt}
+              onClick={(event) => event.stopPropagation()}
+            />
+          )}
+          <button
+            className={`${storyStyles.lightboxArrow} ${storyStyles.lightboxNext}`}
+            type="button"
+            onClick={(event) => {
+              event.stopPropagation();
+              setActiveIndex((activeIndex + 1) % galleryItems.length);
+            }}
+            aria-label="Next gallery item"
+          >
+            ›
+          </button>
+          <p className={storyStyles.lightboxCount}>{activeIndex + 1} / {galleryItems.length}</p>
+        </div>
+      )}
     </div>
   );
 }

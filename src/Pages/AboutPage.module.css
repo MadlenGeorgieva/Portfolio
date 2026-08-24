@@ -76,6 +76,14 @@
 .portrait{bottom:10px}
 .badge{bottom:2px}
 
+/* Lower the portrait group slightly so it flows naturally into the story below. */
+.portrait{bottom:-8px}
+.badge{bottom:-16px}
+
+/* Lower both visual groups while preserving all of their internal positioning. */
+.portraitArea{transform:translateY(38px)}
+.skillMap{transform:translateY(38px)}
+
 @media(max-width:700px){
   .page{width:100%;min-width:0;height:auto;min-height:100vh;overflow-x:hidden;overflow-y:visible;display:block}
   .page>header,.page>footer{height:auto}
@@ -84,10 +92,14 @@
   .intro h1 i{margin-left:10px}
   .intro>p{width:100%;max-width:none;margin-top:20px;transform:none;font-size:1rem;line-height:1.42}
   .portraitArea{height:285px;margin-top:18px}
+  .portraitArea{transform:translateY(14px)}
   .portrait{left:50%;bottom:20px;width:210px;transform:translateX(-55%)}
   .badge{left:calc(50% + 42px);bottom:8px;width:72px;font-size:.95rem}
+  .portrait{bottom:2px}
+  .badge{bottom:-10px}
   .yellowOne{left:5%;top:34px}.blueOne{left:15%;top:29px}.blueTwo{left:auto;right:4%;top:72px}.yellowTwo{left:auto;right:8%;bottom:36px}
   .skillMap{width:100%;min-width:0;height:665px;margin:12px 0 0}
+  .skillMap{transform:translateY(14px)}
   .circle{width:230px;padding:25px}
   .soft{top:0;right:0;left:auto}.hard{top:205px;left:0}.tools{top:410px;right:0}
   .circle h2{font-size:1.08rem}.circle ul{font-size:.83rem;line-height:1.2}
