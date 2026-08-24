@@ -102,6 +102,10 @@
 .imageLightbox{position:fixed;z-index:1000;inset:0;padding:32px;display:grid;place-items:center;background:#000d;cursor:zoom-out}
 .imageLightbox img{max-width:min(1200px,92vw);max-height:88vh;border-radius:24px;object-fit:contain;box-shadow:0 22px 65px #0008;cursor:default}
 .imageLightboxClose{position:fixed;z-index:2;top:22px;right:26px;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:#ffbd00;color:#111;font-size:2.25rem;line-height:1;cursor:pointer}
+.heroLink{display:block;width:100%;height:100%;cursor:pointer}
+.heroLink img{transition:transform .3s ease,filter .3s ease}
+.heroLink:hover img,.heroLink:focus-visible img{transform:scale(1.018);filter:brightness(.9)}
+.heroLink:focus-visible{outline:5px solid #ffbd00;outline-offset:-5px}
 
 @media(max-width:700px){
   .processStep{min-height:0;padding-top:0;display:flex;flex-direction:column;gap:18px}

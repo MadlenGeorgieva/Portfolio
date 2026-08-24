@@ -28,6 +28,7 @@ export const botanicalGardenProject = {
   title: "BOTANICAL GARDEN",
   type: "Webapp",
   heroImage: botanicalHero,
+  liveUrl: "https://www.figma.com/proto/96ZBOzR01ED8kzXEN4golw/Botanical-Garden?node-id=501-2280&starting-point-node-id=501%3A2280&t=PyvHQD6uSrGxroPH-1",
   focusIcons: [figmaIcon, codingIcon],
   tagline: "An app that turns garden visitors into explorers, encouraging them to discover plants and save their favourites in a personal digital garden they can take home as a memory of their visit.",
   overview: [
@@ -63,6 +64,7 @@ export const blaSolProject = {
   title: "BLÅ SOL",
   type: "Webapp",
   heroImage: blaSolHero,
+  liveUrl: "https://madlengeorgieva.github.io/blue-sun/",
   focusIcons: [figmaIcon, codingIcon, lightningIcon, reactIcon],
   tagline: "Blå Sol is a mobile festival companion designed to make the festival experience more connected, organized, and safe through intuitive navigation, real-time information, social features, and an SOS function.",
   overview: [
@@ -80,7 +82,7 @@ export const blaSolProject = {
     { title: "DISCOVER", image: blaSolDiscover, imageAlt: "Blå Sol festival research board", text: "We explored the challenges festival visitors face around navigation, communication and safety. Through desk research, segmentation, field research, interviews and observation, we investigated how people behave in crowded festival environments and what they need to feel informed and connected." },
     { title: "DEFINE", image: blaSolDefine, imageAlt: "Blå Sol Matteo audience persona", text: "We structured our findings using empathy maps, affinity diagramming and personas to identify recurring needs and pain points. This helped us define the core opportunity: creating a simple mobile solution that reduces confusion and helps festival guests navigate, stay connected and feel safe." },
     { title: "DEVELOP", image: blaSolDevelop, imageAlt: "Blå Sol low-fidelity wireframes", text: "We explored different ideas through sketches, moodboards, style tiles and information architecture. We developed the festival map, navigation and communication features while applying UX principles to create a clear and accessible experience." },
-    { title: "DELIVER", image: blaSolDeliver, imageAlt: "Blå Sol final 50 Days Left interface", text: "We tested the concept with 10 participants from the target group and used their feedback to refine the experience. The final solution was developed as an interactive Figma prototype and further implemented as a front-end prototype, bringing together navigation, communication, safety and real-time festival information." },
+    { title: "DELIVER", image: blaSolDeliver, imageAlt: "Blå Sol final 50 Days Left interface", imagePosition: "center top", text: "We tested the concept with 10 participants from the target group and used their feedback to refine the experience. The final solution was developed as an interactive Figma prototype and further implemented as a front-end prototype, bringing together navigation, communication, safety and real-time festival information." },
   ],
 };
 
@@ -89,6 +91,7 @@ export const spilcafeenProject = {
   title: "SPILCAFEEN",
   type: "Webapp",
   heroImage: spilcafeenHero,
+  liveUrl: "https://www.figma.com/proto/8bHaUS110UlMVvvc7oiCRX/Spilcafeen?node-id=1-18&t=TrNcgR0M8JzIqD6v-1",
   focusIcons: [figmaIcon, codingIcon, lightningIcon, reactIcon],
   tagline: "Spilcafeen is a responsive digital experience that helps visitors discover board games suited to their group, interests, and mood. Through personalized recommendations and clear game information, finding the right game becomes simple, memorable, and enjoyable.",
   overview: [
@@ -115,6 +118,7 @@ export const hiddenHyggeProject = {
   title: "HIDDEN HYGGE PLACES",
   type: "Webapp",
   heroImage: hyggeHero,
+  liveUrl: "https://madlengeorgieva.github.io/hygge/",
   focusIcons: [figmaIcon, codingIcon],
   tagline: "Hidden Hygge Places is a responsive experience website that helps young adults discover lesser-known hygge spots based on their mood and interests. Through personalized recommendations and a memorabilia concept, the experience turns finding hidden places into something personal, meaningful, and memorable.",
   overview: [
@@ -132,7 +136,7 @@ export const hiddenHyggeProject = {
     { title: "DISCOVER", image: hyggeDiscover, imageAlt: "Hidden Hygge Places inspiration board", text: "I explored how young adults experience hygge and what makes a place feel cozy, comfortable and worth visiting. Through desk research, observations and interviews, I looked into Danish hygge culture, preferred activities, and how people experience hygge both at home and outside. This helped me understand what creates a meaningful and memorable hygge experience." },
     { title: "DEFINE", image: hyggeDefine, imageAlt: "Hidden Hygge Places Ana Patricia persona", text: "I defined young adults aged 20–25 as my primary target audience and used my research to identify their needs and motivations. Through an affinity diagram, empathy map, persona and Value Proposition Canvas, I discovered that users value calm, enjoyable experiences and meaningful moments they can remember. This led me to focus on the idea of memorabilia — creating something that allows users to take a small part of the experience with them." },
     { title: "DEVELOP", image: hyggeDevelop, imageAlt: "Hidden Hygge Places grayscale wireframes", text: "I explored how the idea of memorabilia could become part of the digital experience. Through mind mapping, user journeys, task flows and sketching, I developed an interactive quiz that helps users find a hidden hygge location matching their mood and interests. The experience was designed not only to help users discover a place, but to encourage them to create a personal memory connected to that experience." },
-    { title: "DELIVER", image: hyggeDeliver, imageAlt: "Hidden Hygge Places final responsive interface", text: "I developed the solution through low-fi, mid-fi and hi-fi prototypes in Figma, refining the layout, content and interactions along the way. Usability testing helped me identify areas for improvement and validate the experience with users. The final responsive website combines personalised location discovery with the idea of creating memorable moments, bringing the concept to life through HTML, CSS and JavaScript." },
+    { title: "DELIVER", image: hyggeDeliver, imageAlt: "Hidden Hygge Places final responsive interface", imagePosition: "center top", text: "I developed the solution through low-fi, mid-fi and hi-fi prototypes in Figma, refining the layout, content and interactions along the way. Usability testing helped me identify areas for improvement and validate the experience with users. The final responsive website combines personalised location discovery with the idea of creating memorable moments, bringing the concept to life through HTML, CSS and JavaScript." },
   ],
 };
 

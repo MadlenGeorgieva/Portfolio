@@ -42,7 +42,19 @@ function ProjectDetailTemplate({ project }) {
       <Header />
       <main>
         <section className={styles.hero}>
-          <img src={project.heroImage} alt={`${project.title} project preview`} />
+          {project.liveUrl ? (
+            <a
+              className={styles.heroLink}
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open the live ${project.title} project`}
+            >
+              <img src={project.heroImage} alt={`${project.title} project preview`} />
+            </a>
+          ) : (
+            <img src={project.heroImage} alt={`${project.title} project preview`} />
+          )}
         </section>
 
         <section className={styles.intro}>
@@ -121,7 +133,11 @@ function ProjectDetailTemplate({ project }) {
                   onClick={() => setOpenProcessImage(step)}
                   aria-label={`Open ${step.imageAlt} at full size`}
                 >
-                  <img src={step.image} alt={step.imageAlt} />
+                  <img
+                    src={step.image}
+                    alt={step.imageAlt}
+                    style={step.imagePosition ? { objectPosition: step.imagePosition } : undefined}
+                  />
                 </button>
               </article>
             ))}
