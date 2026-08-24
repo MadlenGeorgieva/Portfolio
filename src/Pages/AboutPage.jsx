@@ -48,6 +48,76 @@ const galleryItems = [
   ...volunteeringPhotos.map((photo) => ({ ...photo, type: "image" })),
 ];
 
+const teamGalleryItems = galleryItems.slice(0, 1 + storyPhotos.length);
+
+function MobileStoryGallery({ items, galleryOffset, label, onOpen }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentItem = items[currentIndex];
+  const previewItems = items.slice(0, 4);
+
+  const move = (direction) => {
+    setCurrentIndex((current) => (current + direction + items.length) % items.length);
+  };
+
+  return (
+    <div className={storyStyles.mobileGallery} aria-label={label}>
+      <div className={storyStyles.mobileGalleryStage}>
+        <button
+          className={`${storyStyles.mobileGalleryArrow} ${storyStyles.mobileGalleryPrevious}`}
+          type="button"
+          onClick={() => move(-1)}
+          aria-label="Previous gallery item"
+        >
+          ‹
+        </button>
+        <button
+          className={storyStyles.mobileGalleryMain}
+          type="button"
+          onClick={() => onOpen(galleryOffset + currentIndex)}
+          aria-label="Open current gallery item"
+        >
+          {currentItem.type === "video" ? (
+            <video autoPlay loop muted playsInline aria-hidden="true">
+              <source src={currentItem.src} type="video/mp4" />
+            </video>
+          ) : (
+            <img src={currentItem.src} alt={currentItem.alt} />
+          )}
+        </button>
+        <button
+          className={`${storyStyles.mobileGalleryArrow} ${storyStyles.mobileGalleryNext}`}
+          type="button"
+          onClick={() => move(1)}
+          aria-label="Next gallery item"
+        >
+          ›
+        </button>
+      </div>
+
+      <div className={storyStyles.mobileGalleryPreviews}>
+        {previewItems.map((item, index) => (
+          <button
+            className={currentIndex === index ? storyStyles.mobilePreviewActive : undefined}
+            type="button"
+            key={`${item.src}-preview`}
+            onClick={() => setCurrentIndex(index)}
+            aria-label={`Show gallery item ${index + 1}`}
+          >
+            {item.type === "video" ? (
+              <video muted playsInline aria-hidden="true"><source src={item.src} type="video/mp4" /></video>
+            ) : (
+              <img src={item.src} alt="" />
+            )}
+            {index === previewItems.length - 1 && items.length > previewItems.length && (
+              <span>+{items.length - previewItems.length}</span>
+            )}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function AboutPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const activeMedia = activeIndex === null ? null : galleryItems[activeIndex];
@@ -114,7 +184,7 @@ function AboutPage() {
           </p>
         </div>
 
-        <div className={storyStyles.storyGallery} aria-label="Photos from Madlen's teams and activities">
+        <div className={`${storyStyles.storyGallery} ${storyStyles.desktopGallery}`} aria-label="Photos from Madlen's teams and activities">
           <button
             className={storyStyles.storyVideo}
             type="button"
@@ -137,6 +207,12 @@ function AboutPage() {
             </button>
           ))}
         </div>
+        <MobileStoryGallery
+          items={teamGalleryItems}
+          galleryOffset={0}
+          label="Mobile gallery of Madlen's teams and activities"
+          onOpen={setActiveIndex}
+        />
       </section>
 
       <section
@@ -157,7 +233,7 @@ function AboutPage() {
         </div>
 
         <div
-          className={`${storyStyles.storyGallery} ${storyStyles.volunteeringGallery}`}
+          className={`${storyStyles.storyGallery} ${storyStyles.volunteeringGallery} ${storyStyles.desktopGallery}`}
           aria-label="Photos from Madlen's volunteering and creative activities"
         >
           {volunteeringPhotos.map((photo, index) => (
@@ -172,6 +248,12 @@ function AboutPage() {
             </button>
           ))}
         </div>
+        <MobileStoryGallery
+          items={galleryItems.slice(1 + storyPhotos.length)}
+          galleryOffset={1 + storyPhotos.length}
+          label="Mobile gallery of Madlen's volunteering and creative activities"
+          onOpen={setActiveIndex}
+        />
       </section>
 
       <Footer />

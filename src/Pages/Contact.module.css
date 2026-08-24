@@ -47,3 +47,9 @@
   .smallBlueOne{top:20%;left:72%}.smallBlueTwo{left:14%;bottom:31%}.smallYellowOne{top:36%;right:12%}.smallYellowTwo{right:16%;bottom:18%}
   .dots{width:30px;background-image:radial-gradient(circle,#111 2px,transparent 2.5px);background-size:10px 10px}
 }
+
+/* Avoid an undersized contact composition on wide monitors. */
+@media (min-width:1600px){
+  .main>h1{max-width:1340px;font-size:8.5rem}.details{max-width:1240px;margin-top:125px}
+  .details a{font-size:1.35rem}.details b,.details a:nth-child(even) b{width:70px;height:70px;font-size:2.15rem}
+}

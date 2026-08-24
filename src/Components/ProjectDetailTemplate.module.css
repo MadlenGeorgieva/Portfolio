@@ -68,6 +68,8 @@
   .contentSection h2{font-size:clamp(2rem,10vw,2.7rem)}
   .overviewGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:32px 0 62px}
   .overviewCircle{padding:12%}
+  .overviewCircle:nth-child(1),.overviewCircle:nth-child(4){background:#ffbd00;color:#050505}
+  .overviewCircle:nth-child(2),.overviewCircle:nth-child(3){background:#0878ee;color:#fff}
   .overviewCircle h3{font-size:.76rem}.overviewCircle p{margin-top:8px;font-size:.7rem;line-height:1.12}
   .focusIcons{width:88%;gap:4px;margin-top:7px}.focusIcons img{width:23px;height:23px}
   .copyGrid{gap:34px}.copyGrid h3{margin-bottom:9px;font-size:1.15rem}.copyGrid p{font-size:.96rem;line-height:1.42}
@@ -81,4 +83,40 @@
   .processRight .processImage{left:12px!important;right:auto!important}
   .backRow{margin-bottom:60px}.backButton{padding:12px 20px;font-size:.9rem}
   .dots{width:30px}
+}
+
+/* Scale case studies within the dotted frame on wide displays. */
+@media (min-width:1600px){
+  .hero{max-width:1390px;height:min(760px,64vh)}
+  .intro,.contentSection{max-width:1460px;padding-inline:95px}
+  .overviewGrid{gap:48px}.processList{max-width:1180px}.processCard{width:80%}
+}
+
+/* Process images sit above their cards and open independently at full size. */
+.processImage{
+  width:285px;height:285px;padding:0;border:0;z-index:4;cursor:zoom-in;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.processImage:hover,.processImage:focus-visible{transform:scale(1.045);box-shadow:0 12px 30px #0005;outline:4px solid #ffbd00;outline-offset:4px}
+.processLeft .processImage{right:3%}.processRight .processImage{left:3%}
+.imageLightbox{position:fixed;z-index:1000;inset:0;padding:32px;display:grid;place-items:center;background:#000d;cursor:zoom-out}
+.imageLightbox img{max-width:min(1200px,92vw);max-height:88vh;border-radius:24px;object-fit:contain;box-shadow:0 22px 65px #0008;cursor:default}
+.imageLightboxClose{position:fixed;z-index:2;top:22px;right:26px;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:#ffbd00;color:#111;font-size:2.25rem;line-height:1;cursor:pointer}
+
+@media(max-width:700px){
+  .processStep{min-height:0;padding-top:0;display:flex;flex-direction:column;gap:18px}
+  .processCard,.processRight .processCard,.processLeft .processCard{
+    order:2;min-height:300px;padding:24px 18px;text-align:left
+  }
+  .processImage{
+    position:relative;order:1;top:auto;bottom:auto;width:100%;height:auto;aspect-ratio:16/9;border-radius:24px
+  }
+  .processLeft .processImage,.processRight .processImage{
+    left:auto!important;right:auto!important;transform:none
+  }
+  .processImage:hover,.processImage:focus-visible{
+    transform:scale(1.025)
+  }
+  .imageLightbox{padding:18px}.imageLightbox img{max-width:96vw;max-height:82vh;border-radius:16px}
+  .imageLightboxClose{top:14px;right:14px;width:46px;height:46px}
 }

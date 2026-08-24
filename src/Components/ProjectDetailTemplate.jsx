@@ -1,10 +1,12 @@
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import styles from "./ProjectDetailTemplate.module.css";
 
 function ProjectDetailTemplate({ project }) {
+  const [openProcessImage, setOpenProcessImage] = useState(null);
+
   useLayoutEffect(() => {
     const previousRestoration = window.history.scrollRestoration;
     window.history.scrollRestoration = "manual";
@@ -23,6 +25,17 @@ function ProjectDetailTemplate({ project }) {
       window.history.scrollRestoration = previousRestoration;
     };
   }, [project.slug]);
+
+  useEffect(() => {
+    if (!openProcessImage) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setOpenProcessImage(null);
+    };
+
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [openProcessImage]);
 
   return (
     <div className={styles.page}>
@@ -102,9 +115,14 @@ function ProjectDetailTemplate({ project }) {
                   <h3>{step.title}</h3>
                   <p className={styles.stepText}>{step.text}</p>
                 </div>
-                <div className={styles.processImage}>
+                <button
+                  className={styles.processImage}
+                  type="button"
+                  onClick={() => setOpenProcessImage(step)}
+                  aria-label={`Open ${step.imageAlt} at full size`}
+                >
                   <img src={step.image} alt={step.imageAlt} />
-                </div>
+                </button>
               </article>
             ))}
           </div>
@@ -118,6 +136,29 @@ function ProjectDetailTemplate({ project }) {
         <div className={`${styles.dots} ${styles.dotsRight}`} aria-hidden="true" />
       </main>
       <Footer />
+      {openProcessImage ? (
+        <div
+          className={styles.imageLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label={openProcessImage.imageAlt}
+          onClick={() => setOpenProcessImage(null)}
+        >
+          <button
+            className={styles.imageLightboxClose}
+            type="button"
+            onClick={() => setOpenProcessImage(null)}
+            aria-label="Close image"
+          >
+            ×
+          </button>
+          <img
+            src={openProcessImage.image}
+            alt={openProcessImage.imageAlt}
+            onClick={(event) => event.stopPropagation()}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }
