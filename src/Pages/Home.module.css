@@ -862,6 +862,33 @@ the reference.
   }
 }
 
+/* Tablet landing composition. */
+@media (min-width: 701px) and (max-width: 950px) {
+  .home { min-height: 100svh; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+  .hero { height: auto; min-height: 680px; grid-template-columns: 48% 52%; }
+  .heroLeft { padding: 60px 24px 52px 80px; }
+  .portfolioTitle h1 { font-size: clamp(4.8rem, 12vw, 6.4rem); }
+  .intro { width: min(100%, 250px); }
+  .intro .year { font-size: clamp(3.8rem, 9vw, 5rem); }
+  .intro p { font-size: 1rem; }
+  .heroRight { margin-right: 65px; overflow: hidden; }
+  .yellowShape { width: 31%; height: 48%; }
+  .blueShape { top: 47%; width: 48%; }
+  .profileCircle { top: 23%; left: 9%; width: 76%; }
+  .nameTextSvg { top: 14%; left: 8%; width: 88%; }
+  .uxBadge { right: 1%; bottom: 8%; width: 88px; height: 88px; font-size: 1.35rem; }
+  .skillsBar {
+    width: calc(100% - 130px);
+    min-height: 82px;
+    grid-template-columns: 44px repeat(3, minmax(0, 1fr));
+    column-gap: 12px;
+    padding: 10px 8px;
+  }
+  .arrow { width: 42px; height: 42px; }
+  .skillGroup p, .skillGroup span { white-space: normal; font-size: clamp(.62rem, 1.45vw, .78rem); line-height: 1.15; }
+  .skillGroup:not(:last-child)::after { right: -6px; height: 42px; }
+}
+
 /* Keep the desktop composition equally substantial on larger screens. */
 @media (min-width: 951px) {
   .hero {

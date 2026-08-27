@@ -86,3 +86,15 @@
   .navLink::after { height: 3px; }
   .logo { width: 44px; height: 44px; flex: none; }
 }
+
+/* Tablet navigation: keep every link inside the dotted frame. */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .header {
+    height: 88px;
+    padding: 12px 80px;
+  }
+
+  .logo { width: 52px; height: 52px; flex: none; }
+  .nav { gap: clamp(24px, 4vw, 44px); }
+  .navLink { padding-bottom: 8px; font-size: clamp(1rem, 2.25vw, 1.25rem); }
+}

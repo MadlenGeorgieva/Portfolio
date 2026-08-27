@@ -53,3 +53,16 @@
   .main>h1{max-width:1340px;font-size:8.5rem}.details{max-width:1240px;margin-top:125px}
   .details a{font-size:1.35rem}.details b,.details a:nth-child(even) b{width:70px;height:70px;font-size:2.15rem}
 }
+
+/* Tablet contact layout: contained, readable, and clear of the frame. */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .page { width: 100%; min-width: 0; overflow-x: hidden; }
+  .main { min-height: calc(100svh - 88px); padding: 34px 80px 70px; }
+  .main > h1 { font-size: clamp(4.8rem, 11vw, 6.8rem); line-height: .82; }
+  .details { width: min(100%, 620px); margin: 90px auto 0; gap: 30px; }
+  .details a { width: 100%; justify-content: flex-start; text-align: left; gap: 18px; font-size: 1.05rem; }
+  .details b, .details a:nth-child(even) b { order: -1; width: 58px; height: 58px; font-size: 1.75rem; }
+  .largeBlue { top: 37%; left: 68%; }.largeYellow { left: 18%; bottom: 10%; }
+  .smallBlueOne { top: 24%; left: 72%; }.smallYellowOne { top: 29%; right: 13%; }
+  .dots { width: 65px; }
+}

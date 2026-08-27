@@ -85,6 +85,32 @@
   .dots{width:30px}
 }
 
+/* Tablet case-study layout. */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .hero { width: calc(100% - 160px); height: clamp(360px, 54vw, 520px); border-radius: 32px; }
+  .intro, .contentSection { max-width: none; padding-inline: 80px; }
+  .intro { padding-top: 48px; padding-bottom: 58px; }
+  .titleRow { align-items: flex-end; gap: 20px; }
+  .titleRow h1 { font-size: clamp(4rem, 8vw, 5.4rem); }
+  .tagline { margin-top: 38px; font-size: 1.05rem; }
+  .overviewGrid { gap: 14px; margin-top: 42px; margin-bottom: 72px; }
+  .overviewCircle { padding: 10%; }
+  .overviewCircle h3 { font-size: clamp(.8rem, 1.8vw, 1rem); }
+  .overviewCircle p { margin-top: 8px; font-size: clamp(.75rem, 1.7vw, .95rem); }
+  .focusIcons img { width: 27px; height: 27px; }
+  .copyGrid { gap: 40px; }.copyGrid p { font-size: 1rem; }
+  .processHeading { margin-top: 78px !important; }
+  .processList { gap: 42px; margin-top: 42px; }
+  .processStep { min-height: 250px; }
+  .processCard { width: 82%; height: 250px; border-radius: 34px; }
+  .processLeft .processCard { padding-left: 4%; padding-right: 27%; }
+  .processRight .processCard { padding-left: 27%; padding-right: 4%; }
+  .processImage { width: 205px; height: 205px; }
+  .processLeft .processImage { right: 1%; }.processRight .processImage { left: 1%; }
+  .stepText { font-size: clamp(.78rem, 1.5vw, .95rem); }
+  .dots { width: 65px; }
+}
+
 /* Scale case studies within the dotted frame on wide displays. */
 @media (min-width:1600px){
   .hero{max-width:1390px;height:min(760px,64vh)}

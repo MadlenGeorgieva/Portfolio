@@ -116,4 +116,29 @@
   .circle{width:292px;padding:34px}.soft{right:70px}.hard{left:55px}.tools{right:0}
   .circle h2{font-size:1.4rem}.circle ul{font-size:1.02rem}
 }
+
+/* Tablet About overview: stack the two visual systems inside the frame. */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .page { min-width: 0; height: auto; min-height: 100vh; overflow-x: hidden; display: block; }
+  .page > header, .page > footer { height: auto; }
+  .main {
+    width: 100%; height: auto; min-height: 0;
+    padding: 34px 80px 58px;
+    display: grid; grid-template-columns: 1fr; gap: 24px;
+    overflow: visible;
+  }
+  .intro { width: 100%; }
+  .intro h1 { transform: none; font-size: clamp(5rem, 12vw, 6.5rem); }
+  .intro > p { width: min(100%, 620px); max-width: none; margin-top: 26px; transform: none; font-size: 1.12rem; }
+  .portraitArea { width: min(100%, 560px); height: 315px; margin: 18px auto 0; transform: none; }
+  .portrait { left: 50%; bottom: 6px; width: 255px; transform: translateX(-50%); }
+  .badge { left: calc(50% + 80px); bottom: -2px; width: 82px; }
+  .yellowOne { left: 12%; top: 48px; }.blueOne { left: 18%; top: 42px; }
+  .blueTwo { left: auto; right: 12%; top: 98px; }.yellowTwo { left: auto; right: 17%; bottom: 30px; }
+  .skillMap { width: min(100%, 620px); min-width: 0; height: 520px; margin: 0 auto; transform: none; }
+  .circle { width: 230px; padding: 24px; }
+  .soft { top: 0; right: 22px; }.hard { top: 145px; left: 22px; }.tools { top: 280px; right: 22px; }
+  .circle h2 { font-size: 1.12rem; }.circle ul { font-size: .84rem; line-height: 1.2; }
+  .dots { width: 65px; }
+}
 .footer > :nth-child(2) b,.footer > :nth-child(3) b{font-size:0}.footer > :nth-child(2) b::before{content:"☎";font-size:1.15rem}.footer > :nth-child(3) b::before{content:"✉";font-size:1.15rem}
