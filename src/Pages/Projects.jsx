@@ -1,5 +1,6 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import BackToTop from "../Components/BackToTop";
 import styles from "./Projects.module.css";
 import blaSolImage from "../assets/project-bla-sol.png";
 import hyggeImage from "../assets/project-hygge.png";
@@ -52,6 +53,7 @@ function Projects() {
       <div className={`${styles.dots} ${styles.dotsLeft}`} aria-hidden="true" />
       <div className={`${styles.dots} ${styles.dotsRight}`} aria-hidden="true" />
     </main>
+    <BackToTop />
     <Footer />
   </div>;
 }

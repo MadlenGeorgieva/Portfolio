@@ -8,12 +8,20 @@
 
 .page > header,
 .page > footer {
-  height: auto;
+  height: 95px;
 }
 
+.page > footer { height: auto; }
+
 .main {
-  min-height: calc(100vh - 170px);
-  margin-bottom: 55px;
+  min-height: 0;
+  margin-bottom: 8px;
+}
+
+/* The overview visuals are intentionally offset; reserve their visible overflow
+   so the following story section never paints across the circles. */
+@media (min-width: 1051px) {
+  .main + .storySection { margin-top: 55px; }
 }
 
 .storySection {
@@ -22,7 +30,7 @@
   width: calc(100% - 190px);
   min-height: 570px;
   margin: 0 auto;
-  padding: clamp(55px, 6vw, 85px) clamp(45px, 6vw, 105px) 28px;
+  padding: clamp(32px, 3vw, 48px) clamp(45px, 6vw, 105px) 28px;
   display: grid;
   grid-template-columns: minmax(340px, .82fr) minmax(540px, 1.18fr);
   align-items: center;
@@ -130,6 +138,8 @@
   justify-self: center;
 }
 
+.storySection:not(.volunteeringSection) .storyGallery { top: 20px; }
+
 .mobileGallery {
   display: none;
 }
@@ -181,11 +191,14 @@
   transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
-.photo1 { top: 0; left: 50%; z-index: 2; transform: translateX(-50%); }
-.photo2 { top: 155px; left: 30px; z-index: 3; }
-.photo3 { bottom: 25px; left: 105px; z-index: 4; }
-.photo4 { top: 155px; right: 30px; z-index: 3; }
-.photo5 { right: 105px; bottom: 25px; z-index: 2; }
+.photo1 { top: 8px; left: 50%; z-index: 2; transform: translateX(-50%); }
+.photo2 { top: 91px; right: 66px; z-index: 3; }
+.photo3 { top: 277px; right: 23px; z-index: 4; }
+.photo4 { right: 142px; bottom: 29px; z-index: 3; }
+.photo5 { bottom: 29px; left: 142px; z-index: 2; }
+.photo6 { top: 277px; left: 23px; z-index: 4; }
+.photo7 { top: 91px; left: 66px; z-index: 3; }
+.photo8 { top: 82px; right: 52px; z-index: 3; }
 
 .volunteeringGallery {
   width: min(100%, 600px);
@@ -204,12 +217,13 @@
   transform: translate(-50%, -50%);
 }
 
-.volunteerPhoto2 { top: 0; left: calc(50% - 72.5px); }
-.volunteerPhoto3 { top: 112px; right: 37px; }
-.volunteerPhoto4 { right: 37px; bottom: 112px; }
-.volunteerPhoto5 { bottom: 0; left: calc(50% - 72.5px); }
-.volunteerPhoto6 { bottom: 112px; left: 37px; }
-.volunteerPhoto7 { top: 112px; left: 37px; }
+.volunteerPhoto2 { top: 8px; left: calc(50% - 72.5px); }
+.volunteerPhoto3 { top: 91px; right: 56px; }
+.volunteerPhoto4 { top: 277px; right: 13px; }
+.volunteerPhoto5 { right: 132px; bottom: 29px; }
+.volunteerPhoto6 { bottom: 29px; left: 132px; }
+.volunteerPhoto7 { top: 277px; left: 13px; }
+.volunteerPhoto8 { top: 91px; left: 56px; }
 
 .storyPhoto:hover,
 .storyPhoto:focus-visible {
@@ -243,6 +257,11 @@
 
 .photo3 img { object-position: 50% 24%; }
 .photo5 img { object-position: 35% 50%; }
+.photo6 img { object-position: 68% 47%; transform: scale(1.15); }
+.photo7 img { object-position: 29% 39%; transform: scale(1.35); }
+.photo8 img { object-position: 50% 24%; }
+.volunteerPhoto4 img { object-position: 92% 65%; transform: scale(1.55); }
+.volunteerPhoto8 img { object-position: 50% 24%; transform: scale(1.3); }
 
 .lightbox {
   position: fixed;
@@ -348,6 +367,7 @@
 }
 
 @media (max-width: 700px) {
+  .page > header { height: 76px; }
   .main {
     min-height: 0;
     margin-bottom: 0;
@@ -407,6 +427,7 @@
   .volunteerPhoto5 { bottom: 2px; left: calc(50% - min(12vw, 42px)); }
   .volunteerPhoto6 { bottom: 88px; left: 0; }
   .volunteerPhoto7 { top: 88px; left: 0; }
+  .volunteerPhoto8 { top: 2px; right: 0; }
 
   .lightbox {
     padding: 18px;
@@ -519,6 +540,7 @@
 }
 
 @media (min-width: 701px) and (max-width: 1050px) {
+  .page > header { height: 88px; }
   .storySection {
     width: calc(100% - 130px);
     min-height: 0;

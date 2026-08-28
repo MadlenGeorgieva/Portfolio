@@ -5,6 +5,9 @@ import gymnasticsAwardImage from "../assets/about-gymnastics-award.jpg";
 import gymnasticsImage from "../assets/about-gymnastics.jpg";
 import debateImage from "../assets/about-debate.jpg";
 import theatreImage from "../assets/about-theatre.jpg";
+import aubgImage from "../assets/about-aubg.jpg";
+import aarhusImage from "../assets/about-aarhus.jpg";
+import formalImage from "../assets/about-formal.jpg";
 import teamVideo from "../assets/about-team-video.mp4";
 import forestImage from "../assets/about-volunteering-forest.jpg";
 import erasmusImage from "../assets/about-volunteering-erasmus.jpg";
@@ -15,6 +18,7 @@ import redCrossImage from "../assets/about-volunteering-red-cross.jpg";
 import redCrossEventImage from "../assets/about-volunteering-red-cross-event.jpg";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import BackToTop from "../Components/BackToTop";
 import styles from "./AboutPage.module.css";
 import storyStyles from "./AboutStory.module.css";
 
@@ -30,6 +34,8 @@ const storyPhotos = [
   { src: gymnasticsImage, alt: "Madlen after a rhythmic gymnastics performance" },
   { src: debateImage, alt: "Madlen taking part in a speeches and debates event" },
   { src: theatreImage, alt: "Madlen performing with her Spanish theatre group" },
+  { src: aubgImage, alt: "Madlen at the American University in Bulgaria" },
+  { src: aarhusImage, alt: "Madlen visiting a historic street in Aarhus" },
 ];
 
 const volunteeringPhotos = [
@@ -40,6 +46,7 @@ const volunteeringPhotos = [
   { src: wwfImage, alt: "Madlen participating in a WWF activity" },
   { src: redCrossImage, alt: "Madlen volunteering with the Bulgarian Red Cross" },
   { src: redCrossEventImage, alt: "Madlen at a Bulgarian Red Cross event" },
+  { src: formalImage, alt: "Madlen dressed for a formal event" },
 ];
 
 const galleryItems = [
@@ -256,6 +263,7 @@ function AboutPage() {
         />
       </section>
 
+      <BackToTop />
       <Footer />
 
       {activeMedia && (

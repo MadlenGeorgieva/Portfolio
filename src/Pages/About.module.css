@@ -266,7 +266,7 @@
 
   width: 40px;
 
-  background-image: radial-gradient(circle, #111 3px, transparent 3px);
+  background-image: radial-gradient(circle, #676767 3px, transparent 3px);
   background-size: 13px 13px;
 }
 
@@ -362,7 +362,7 @@
     background-size: 10px 10px;
     background-image: radial-gradient(
       circle,
-      #111 2px,
+      #676767 2px,
       transparent 2px
     );
   }

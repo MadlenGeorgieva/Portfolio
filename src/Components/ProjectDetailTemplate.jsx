@@ -2,10 +2,14 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import BackToTop from "./BackToTop";
 import styles from "./ProjectDetailTemplate.module.css";
 
 function ProjectDetailTemplate({ project }) {
   const [openProcessImage, setOpenProcessImage] = useState(null);
+  const heroLinkLabel = project.liveUrl?.includes("figma.com")
+    ? "Go to Figma prototype"
+    : "Go to live site";
 
   useLayoutEffect(() => {
     const previousRestoration = window.history.scrollRestoration;
@@ -48,9 +52,10 @@ function ProjectDetailTemplate({ project }) {
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              aria-label={`Open the live ${project.title} project`}
+              aria-label={`${heroLinkLabel}: ${project.title}`}
             >
               <img src={project.heroImage} alt={`${project.title} project preview`} />
+              <span className={styles.heroLinkLabel}>{heroLinkLabel}</span>
             </a>
           ) : (
             <img src={project.heroImage} alt={`${project.title} project preview`} />
@@ -136,7 +141,14 @@ function ProjectDetailTemplate({ project }) {
                   <img
                     src={step.image}
                     alt={step.imageAlt}
-                    style={step.imagePosition ? { objectPosition: step.imagePosition } : undefined}
+                    style={{
+                      objectPosition: project.slug === "botanical-garden" && step.title === "DELIVER"
+                        ? "center bottom"
+                        : step.imagePosition,
+                      transform: project.slug === "bla-sol" && step.title === "DELIVER"
+                        ? "scale(1.15) translateY(-5%)"
+                        : undefined,
+                    }}
                   />
                 </button>
               </article>
@@ -151,6 +163,7 @@ function ProjectDetailTemplate({ project }) {
         <div className={`${styles.dots} ${styles.dotsLeft}`} aria-hidden="true" />
         <div className={`${styles.dots} ${styles.dotsRight}`} aria-hidden="true" />
       </main>
+      <BackToTop />
       <Footer />
       {openProcessImage ? (
         <div

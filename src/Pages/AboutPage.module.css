@@ -14,10 +14,10 @@
 .portraitArea { position:relative; height:330px; margin-top:10px; transform:translateX(35px); }
 .portrait { position:absolute; left:120px; bottom:0; width:285px; aspect-ratio:1; border-radius:50%; overflow:hidden; z-index:2; }
 .portrait img { width:100%; height:100%; object-fit:cover; object-position:50% 36%; filter:grayscale(1); }
-.badge { position:absolute; left:327px; bottom:-8px; width:94px; aspect-ratio:1; display:grid; place-items:center; border-radius:50%; background:#0878ee; color:#fff; font-size:1.16rem; font-weight:600; z-index:4; }
+.badge { position:absolute; left:327px; bottom:-8px; width:94px; aspect-ratio:1; display:grid; place-items:center; border-radius:50%; background:#ffbd00; color:#111; font-size:1.16rem; font-weight:600; z-index:4; }
 .portraitArea > i,.skillMap > i { position:absolute; display:block; border-radius:50%; }
 .yellowOne { left:0; top:42px; width:37px; height:37px; background:#ffbd00; }
-.blueOne { left:33px; top:37px; width:19px; height:19px; background:#0878ee; }
+.blueOne { left:58px; top:37px; width:19px; height:19px; background:#0878ee; }
 .blueTwo { left:430px; top:92px; width:38px; height:38px; background:#0878ee; }
 .yellowTwo { left:410px; bottom:28px; width:19px; height:19px; background:#ffbd00; }
 .skillMap { position:relative; width:800px; min-width:800px; height:750px; margin:0 auto; transform:translateX(-90px); }
@@ -29,7 +29,7 @@
 .hard { top:210px; left:0; background:#ffbd00; }
 .tools { top:400px; right:0; color:#fff; background:#0878ee; }
 .mapBlue,.mapYellow { display:none; }
-.dots { position:absolute; z-index:5; top:-95px; right:8px; bottom:0; width:45px; background-image:radial-gradient(circle,#111 3px,transparent 4px); background-size:13px 13px; }
+.dots { position:absolute; z-index:5; top:-95px; right:8px; bottom:0; width:45px; background-image:radial-gradient(circle,#676767 3px,transparent 4px); background-size:13px 13px; }
 .footer { height:75px; padding:0 80px; display:grid; grid-template-columns:1fr 1fr 1.3fr; align-items:center; background:#f4f4f4; border-top:1px solid #666; }
 .footer > * { min-height:42px; padding:0 25px; display:flex; align-items:center; gap:12px; color:#111; text-decoration:none; border-left:1px solid #777; font-size:.82rem; }
 .footer > :first-child { padding-left:0; border-left:0; }
@@ -56,19 +56,20 @@
 
 .intro>p{transform:translateX(-55px)}.intro,.skillMap{position:relative;z-index:1}.main::before,.main::after{content:"";display:block;position:absolute;z-index:0;border-radius:50%;pointer-events:none}.main::before{left:8%;top:520px;width:18px;height:18px;background:#ffbd00}.main::after{left:auto;right:8%;top:300px;width:22px;height:22px;background:#0878ee}
 
-.portrait{bottom:-30px}.badge{bottom:-38px}.yellowOne{left:98px;top:50px}.blueOne{left:128px;top:43px}
+.portrait{bottom:-30px}.badge{bottom:-38px}.yellowOne{left:98px;top:50px}.blueOne{left:145px;top:43px}
 
 .dots{position:fixed;top:0;bottom:0}
 
 /* Compact one-screen cascade with deliberately playful offsets. */
-.page{height:100vh;min-height:0;overflow:hidden;display:grid;grid-template-rows:95px minmax(0,1fr) 75px}
+.page{height:auto;min-height:100vh;overflow:visible;display:grid;grid-template-rows:95px minmax(720px,1fr) 75px}
 .page>header{height:95px}
-.page>footer{height:75px;min-height:0}
-.main{min-height:0;height:auto;align-items:center;padding-block:4px}
-.skillMap{width:550px;min-width:550px;height:530px}
+.page>footer{position:relative;z-index:0;height:75px;min-height:0}
+.main{z-index:2;min-height:0;height:auto;align-items:center;padding-top:22px;padding-bottom:4px}
+.intro{align-self:start}
+.skillMap{width:550px;min-width:550px;height:530px;overflow:visible}
 .circle{width:265px;padding:27px}
-.soft{top:0;left:auto;right:75px;z-index:2}
-.hard{top:183px;left:53px;z-index:5}
+.soft{top:-30px;left:auto;right:75px;z-index:2}
+.hard{top:168px;left:53px;z-index:5}
 .tools{top:265px;right:0;z-index:2}
 .circle h2{font-size:1.25rem}
 .circle ul{font-size:.95rem;line-height:1.18}
@@ -82,7 +83,7 @@
 
 /* Lower both visual groups while preserving all of their internal positioning. */
 .portraitArea{transform:translateY(38px)}
-.skillMap{transform:translateY(38px)}
+.skillMap{transform:translateY(68px)}
 
 @media(max-width:700px){
   .page{width:100%;min-width:0;height:auto;min-height:100vh;overflow-x:hidden;overflow-y:visible;display:block}
@@ -97,14 +98,14 @@
   .badge{left:calc(50% + 42px);bottom:8px;width:72px;font-size:.95rem}
   .portrait{bottom:2px}
   .badge{bottom:-10px}
-  .yellowOne{left:5%;top:34px}.blueOne{left:15%;top:29px}.blueTwo{left:auto;right:4%;top:72px}.yellowTwo{left:auto;right:8%;bottom:36px}
+  .yellowOne{left:5%;top:34px}.blueOne{left:22%;top:29px}.blueTwo{left:auto;right:4%;top:72px}.yellowTwo{left:auto;right:8%;bottom:36px}
   .skillMap{width:100%;min-width:0;height:665px;margin:12px 0 0}
   .skillMap{margin-top:30px;transform:translateY(18px)}
   .circle{width:230px;padding:25px}
   .soft{top:0;right:0;left:auto}.hard{top:205px;left:0}.tools{top:410px;right:0}
   .circle h2{font-size:1.08rem}.circle ul{font-size:.83rem;line-height:1.2}
   .main::before{left:10%;top:48%;width:14px;height:14px}.main::after{right:10%;top:68%;width:17px;height:17px}
-  .dots{width:30px;background-image:radial-gradient(circle,#111 2px,transparent 2.5px);background-size:10px 10px}
+  .dots{width:30px;background-image:radial-gradient(circle,#676767 2px,transparent 2.5px);background-size:10px 10px}
 }
 
 /* Keep the one-screen About composition visually full on wide monitors. */

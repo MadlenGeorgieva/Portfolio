@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <a
-        href="https://www.linkedin.com/"
+        href="https://www.linkedin.com/in/madlen-georgieva-39ab3230a"
         target="_blank"
         rel="noreferrer"
         className={styles.contactItem}

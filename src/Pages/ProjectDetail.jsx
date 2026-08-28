@@ -1,5 +1,5 @@
-import ProjectDetailTemplate from "../Components/ProjectDetailTemplate.jsx";
 import { Navigate, useParams } from "react-router-dom";
+import ProjectDetailTemplate from "../Components/ProjectDetailTemplate.jsx";
 import { projectsBySlug } from "../data/projects.js";
 
 function ProjectDetail() {

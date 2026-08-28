@@ -135,7 +135,7 @@
   top: 0;
   bottom: 0;
   width: 65px;
-  background-image: radial-gradient(circle, #111 3px, transparent 4px);
+  background-image: radial-gradient(circle, #676767 3px, transparent 4px);
   background-size: 13px 13px;
   background-position: center top;
   pointer-events: none;
@@ -317,7 +317,7 @@ the reference.
   width: 69px;
 
   display: block;
-  background-image: radial-gradient(circle, #111 4px, transparent 4.5px);
+  background-image: radial-gradient(circle, #676767 4px, transparent 4.5px);
   background-size: 13px 18px;
 
   z-index: 5;
@@ -601,7 +601,7 @@ the reference.
 
   .frameDots {
     width: 30px;
-    background-image: radial-gradient(circle, #111 2px, transparent 2.5px);
+    background-image: radial-gradient(circle, #676767 2px, transparent 2.5px);
     background-size: 10px 10px;
   }
   .heroRight { margin-right: 30px; }

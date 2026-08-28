@@ -51,8 +51,8 @@
 .focusIcons img{width:clamp(28px,3vw,44px);height:clamp(28px,3vw,44px);object-fit:contain}
 
 /* Match the shared dotted frame used by every portfolio page. */
-.dots{background-image:radial-gradient(circle,#111 3px,transparent 4px);background-size:13px 13px;background-position:center top}
-@media(max-width:760px){.dots{background-image:radial-gradient(circle,#111 2px,transparent 2.5px);background-size:10px 10px}}
+.dots{background-image:radial-gradient(circle,#676767 3px,transparent 4px);background-size:13px 13px;background-position:center top}
+@media(max-width:760px){.dots{background-image:radial-gradient(circle,#676767 2px,transparent 2.5px);background-size:10px 10px}}
 
 @media(max-width:700px){
   .page{width:100%;overflow-x:hidden}
@@ -123,15 +123,21 @@
   width:285px;height:285px;padding:0;border:0;z-index:4;cursor:zoom-in;
   transition:transform .2s ease,box-shadow .2s ease;
 }
+.processImage img{object-position:center top}
 .processImage:hover,.processImage:focus-visible{transform:scale(1.045);box-shadow:0 12px 30px #0005;outline:4px solid #ffbd00;outline-offset:4px}
 .processLeft .processImage{right:3%}.processRight .processImage{left:3%}
 .imageLightbox{position:fixed;z-index:1000;inset:0;padding:32px;display:grid;place-items:center;background:#000d;cursor:zoom-out}
 .imageLightbox img{max-width:min(1200px,92vw);max-height:88vh;border-radius:24px;object-fit:contain;box-shadow:0 22px 65px #0008;cursor:default}
 .imageLightboxClose{position:fixed;z-index:2;top:22px;right:26px;width:52px;height:52px;border:0;border-radius:50%;display:grid;place-items:center;background:#ffbd00;color:#111;font-size:2.25rem;line-height:1;cursor:pointer}
 .heroLink{display:block;width:100%;height:100%;cursor:pointer}
-.heroLink img{transition:transform .3s ease,filter .3s ease}
-.heroLink:hover img,.heroLink:focus-visible img{transform:scale(1.018);filter:brightness(.9)}
+.heroLink img{transition:transform .3s ease}
+.heroLink:hover img,.heroLink:focus-visible img{transform:scale(1.018)}
 .heroLink:focus-visible{outline:5px solid #ffbd00;outline-offset:-5px}
+.heroLink{position:relative;overflow:hidden}
+.heroLink::after{content:"";position:absolute;z-index:1;inset:0;background:#0878eedd;opacity:0;transition:opacity .28s ease}
+.heroLinkLabel{position:absolute;z-index:2;left:50%;top:50%;color:#fff;font-size:clamp(1.1rem,2vw,1.65rem);font-weight:800;white-space:nowrap;opacity:0;transform:translate(-50%,-40%);transition:opacity .25s ease,transform .25s ease}
+.heroLink:hover::after,.heroLink:focus-visible::after{opacity:1}
+.heroLink:hover .heroLinkLabel,.heroLink:focus-visible .heroLinkLabel{opacity:1;transform:translate(-50%,-50%)}
 
 @media(max-width:700px){
   .processStep{min-height:0;padding-top:0;display:flex;flex-direction:column;gap:18px}
