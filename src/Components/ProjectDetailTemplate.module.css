@@ -41,7 +41,7 @@
 
 .dots{width:65px}.intro,.contentSection{max-width:1390px;padding-inline:95px}@media(max-width:760px){.dots{width:30px}.intro,.contentSection{padding-inline:45px}}
 
-.dots{position:fixed;top:0;bottom:0}.hero{width:calc(100% - 190px);max-width:1200px;margin-inline:auto;border-radius:40px}
+.dots{position:fixed;top:0;bottom:0}.hero{width:calc(100% - 190px);max-width:1400px;margin-inline:auto;border-radius:40px}
 
 @media(max-width:760px){.hero{width:calc(100% - 90px);border-radius:24px}}
 
@@ -113,9 +113,9 @@
 
 /* Scale case studies within the dotted frame on wide displays. */
 @media (min-width:1600px){
-  .hero{max-width:1390px;height:min(760px,64vh)}
+  .hero{max-width:1480px;height:min(760px,78vh)}
   .intro,.contentSection{max-width:1460px;padding-inline:95px}
-  .overviewGrid{gap:48px}.processList{max-width:1180px}.processCard{width:80%}
+  .overviewGrid{gap:48px}.processList{max-width:none}.processCard{width:80%}
 }
 
 /* Process images sit above their cards and open independently at full size. */
@@ -138,6 +138,9 @@
 .heroLinkLabel{position:absolute;z-index:2;left:50%;top:50%;color:#fff;font-size:clamp(1.1rem,2vw,1.65rem);font-weight:800;white-space:nowrap;opacity:0;transform:translate(-50%,-40%);transition:opacity .25s ease,transform .25s ease}
 .heroLink:hover::after,.heroLink:focus-visible::after{opacity:1}
 .heroLink:hover .heroLinkLabel,.heroLink:focus-visible .heroLinkLabel{opacity:1;transform:translate(-50%,-50%)}
+
+/* The Blå Sol artwork is a complete phone lineup, so preserve its full frame. */
+.fullPhoneHero img{object-fit:contain;object-position:center}
 
 @media(max-width:700px){
   .processStep{min-height:0;padding-top:0;display:flex;flex-direction:column;gap:18px}

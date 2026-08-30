@@ -45,7 +45,7 @@ function ProjectDetailTemplate({ project }) {
     <div className={styles.page}>
       <Header />
       <main>
-        <section className={styles.hero}>
+        <section className={`${styles.hero} ${project.slug === "bla-sol" ? styles.fullPhoneHero : ""}`}>
           {project.liveUrl ? (
             <a
               className={styles.heroLink}

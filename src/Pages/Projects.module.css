@@ -7,7 +7,7 @@
 
 .main{padding-inline:80px}.main h1{font-size:clamp(5.25rem,7.8vw,8rem)}.dots{width:39px;right:0;background-position:center top}.dotsLeft{left:0;right:auto}.dotsRight{right:0;left:auto}
 
-.main>h1{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}.grid{width:100%;max-width:1200px;margin-left:auto;margin-right:auto;gap:clamp(90px,11vw,158px)}.main>h1{margin-bottom:45px}.grid p{font-size:1rem;line-height:1.35}
+.main>h1{width:100%;max-width:1000px;margin-left:auto;margin-right:auto}.grid{width:100%;max-width:1000px;margin-left:auto;margin-right:auto;gap:100px}.main>h1{margin-bottom:38px}.grid p{font-size:1rem;line-height:1.35}
 
 .grid article>i{display:none}.main::before,.main::after{display:block;content:"";position:absolute;z-index:1;width:16px;height:16px;border-radius:50%;pointer-events:none}.main::before{top:165px;right:105px;left:auto;background:#ffbd00;box-shadow:18px 455px #ffbd00}.main::after{top:650px;left:105px;background:#0878ee;box-shadow:-18px -360px #0878ee}
 
@@ -30,6 +30,7 @@
 }
 
 @media(min-width:1101px){
+  .main>h1{max-width:1344px;font-size:7rem}
   .grid p{width:200%;margin-left:-50%;margin-right:-50%}
 }
 
@@ -54,16 +55,24 @@
 
 /* Let the portfolio grid occupy the framed area on wide displays. */
 @media (min-width:1600px){
-  .main{padding-inline:95px}.main h1{max-width:1340px;margin-inline:auto}
-  .grid{max-width:1340px;gap:170px}
+  .main{padding-inline:95px}.main h1{max-width:1344px;margin-inline:auto;font-size:7rem}
+  .grid{max-width:1100px;gap:110px}
   .grid p{font-size:clamp(1rem,.72vw,1.12rem)}
   .grid p b{font-size:1.2em}
 }
 
 @media (min-width:2200px){
-  .main>h1{max-width:1580px}
-  .grid{max-width:1580px;gap:190px}
+  .main>h1{max-width:1344px;font-size:7.25rem}
+  .grid{max-width:1200px;gap:120px}
   .grid p{font-size:1.12rem}
+}
+
+/* Keep part of the next row visible on shorter desktop viewports as a scroll cue. */
+@media (min-width:1101px) and (max-height:900px){
+  .main{padding-top:18px}
+  .main>h1{max-width:1344px;margin-bottom:30px}
+  .grid{max-width:1040px;gap:48px 72px}
+  .grid p{font-size:.86rem}
 }
 
 /* Tablet project gallery: two balanced cards within the dotted frame. */
