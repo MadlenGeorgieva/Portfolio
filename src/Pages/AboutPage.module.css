@@ -111,13 +111,15 @@
 /* Keep the one-screen About composition visually full on wide monitors. */
 @media (min-width:1600px){
   .main{grid-template-columns:570px 680px;column-gap:70px}
-  .intro h1{font-size:7.25rem}.intro>p{width:550px;font-size:1.32rem}
+  .intro h1{font-size:7rem}.intro>p{width:550px;font-size:1.32rem}
   .portraitArea{height:325px}.portrait{left:118px;width:285px}.badge{left:325px;width:90px}
   .skillMap{width:680px;min-width:680px;height:610px}
   .circle{width:292px;padding:34px}
   .soft{top:-32px;right:81px}.hard{top:181px;left:57px}.tools{top:286px;right:0}
   .circle h2{font-size:1.4rem}.circle ul{font-size:1.02rem}
 }
+
+@media (min-width:2200px){.intro h1{font-size:7.25rem}}
 
 /* Wide but short desktop windows keep the compact cascade fully visible. */
 @media (min-width:1600px) and (max-height:900px){
