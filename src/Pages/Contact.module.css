@@ -55,6 +55,7 @@
 }
 
 @media (min-width:2200px){.main>h1{font-size:7.25rem}}
+@media (min-width:2800px){.main>h1{font-size:8.25rem}}
 
 /* Tablet contact layout: contained, readable, and clear of the frame. */
 @media (min-width: 701px) and (max-width: 1100px) {

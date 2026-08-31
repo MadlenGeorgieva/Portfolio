@@ -65,11 +65,17 @@
   .grid p{font-size:1.12rem}
 }
 
+@media (min-width:2800px){
+  .main>h1{font-size:8.25rem}
+  .grid{max-width:1500px;gap:120px 130px}
+  .grid p{font-size:1.2rem}
+}
+
 /* Keep part of the next row visible on shorter desktop viewports as a scroll cue. */
 @media (min-width:1101px) and (max-height:1000px){
   .main{padding-top:22px}
-  .main>h1{margin-bottom:30px}
-  .grid{max-width:960px;gap:46px 68px}
+  .main>h1{margin-bottom:16px}
+  .grid{max-width:900px;gap:8px 64px}
   .grid p{font-size:.86rem}
 }
 
