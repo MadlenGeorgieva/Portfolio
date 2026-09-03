@@ -70,6 +70,12 @@
   column-gap: clamp(40px, 5vw, 75px);
 }
 
+@media (min-width: 1600px) {
+  .volunteeringSection {
+    margin-top: clamp(55px, 6vw, 90px);
+  }
+}
+
 .volunteeringSection::before {
   left: 6%;
   bottom: 20%;
@@ -79,7 +85,7 @@
 }
 
 .volunteeringSection::after {
-  right: 7%;
+  right: 3%;
   top: 21%;
   width: 16px;
   height: 16px;
@@ -94,9 +100,6 @@
 
 .volunteeringSection .storyCopy h2 {
   max-width: 590px;
-  font-size: clamp(2.7rem, 3.7vw, 4.35rem);
-  line-height: .96;
-  letter-spacing: -.035em;
 }
 
 .volunteeringSection .storyGallery {
@@ -119,9 +122,11 @@
 
 .storyCopy h2 {
   margin: 0 0 28px;
-  font-size: clamp(2.8rem, 4.5vw, 5.4rem);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(2.7rem, 4.1vw, 4.9rem);
   line-height: .92;
   letter-spacing: -.045em;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -418,7 +423,6 @@
   .storySection::after { right: -18px; top: 10%; }
 
   .volunteeringGallery { height: 390px; }
-  .volunteeringSection .storyCopy h2 { font-size: clamp(2.35rem, 11vw, 3.25rem); }
   .volunteeringGallery .storyPhoto { width: min(24vw, 84px); }
   .volunteeringGallery .volunteerPhoto1 { width: min(46vw, 165px); }
   .volunteerPhoto2 { top: 2px; left: calc(50% - min(12vw, 42px)); }

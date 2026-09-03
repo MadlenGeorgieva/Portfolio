@@ -22,6 +22,33 @@ import BackToTop from "../Components/BackToTop";
 import styles from "./AboutPage.module.css";
 import storyStyles from "./AboutStory.module.css";
 
+const aboutKeyTerms = [
+  "UX/UI designer",
+  "intuitive digital experiences",
+  "discipline, patience, teamwork",
+  "team leader",
+  "Bulgarian Red Cross",
+  "mentored Erasmus+ volunteers",
+  "hackathons",
+  "WWF",
+];
+
+const aboutKeyTermPattern = new RegExp(
+  `(${aboutKeyTerms
+    .sort((first, second) => second.length - first.length)
+    .map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|")})`,
+  "gi",
+);
+
+function emphasizeAboutTerms(text) {
+  return text.split(aboutKeyTermPattern).map((part, index) =>
+    aboutKeyTerms.some((term) => term.toLowerCase() === part.toLowerCase())
+      ? <strong className={styles.aboutKeyTerm} key={`${part}-${index}`}>{part}</strong>
+      : part
+  );
+}
+
 const skills = [
   { className: "soft", icon: "♧", title: "SOFT SKILLS", items: ["Empathy", "Problem Solving", "Critical Thinking", "Collaboration", "Communication"] },
   { className: "hard", icon: "♙", title: "HARD SKILLS", items: ["UI Design", "UX Research", "Wireframing", "Prototyping", "User Flows", "Design Systems"] },
@@ -153,7 +180,7 @@ function AboutPage() {
       <main className={`${styles.main} ${storyStyles.main}`}>
         <section className={styles.intro}>
           <h1>AB<span>O</span>UT <i>•</i></h1>
-          <p>I’m a UX/UI designer who enjoys turning complex ideas into clear, intuitive digital experiences. I combine curiosity, empathy, and creativity to design products that feel both useful and enjoyable.</p>
+          <p>{emphasizeAboutTerms("I’m a UX/UI designer who enjoys turning complex ideas into clear, intuitive digital experiences. I combine curiosity, empathy, and creativity to design products that feel both useful and enjoyable.")}</p>
 
           <div className={styles.portraitArea}>
             <i className={styles.yellowOne} /><i className={styles.blueOne} />
@@ -181,14 +208,7 @@ function AboutPage() {
         <div className={storyStyles.storyCopy}>
           <p className={storyStyles.storyEyebrow}>BEYOND DESIGN</p>
           <h2 id="team-story-title">Growing through teams</h2>
-          <p>
-            I’ve been part of different teams from a young age, starting with
-            sports like gymnastics, bowling, tennis, and swimming. Being active
-            taught me discipline, patience, teamwork, and how to stay motivated.
-            Later, in high school, I also joined a speeches and debates team,
-            eventually becoming a team leader, and took part in a Spanish theatre
-            group.
-          </p>
+          <p>{emphasizeAboutTerms("I’ve been part of different teams from a young age, starting with sports like gymnastics, bowling, tennis, and swimming. Being active taught me discipline, patience, teamwork, and how to stay motivated. Later, in high school, I also joined a speeches and debates team, eventually becoming a team leader, and took part in a Spanish theatre group.")}</p>
         </div>
 
         <div className={`${storyStyles.storyGallery} ${storyStyles.desktopGallery}`} aria-label="Photos from Madlen's teams and activities">
@@ -229,14 +249,7 @@ function AboutPage() {
         <div className={storyStyles.storyCopy}>
           <p className={storyStyles.storyEyebrow}>CREATIVITY &amp; IMPACT</p>
           <h2 id="volunteering-story-title">Learning by contributing</h2>
-          <p>
-            High school also gave me the chance to explore volunteering and more
-            creative challenges. I volunteered with the Bulgarian Red Cross,
-            mentored Erasmus+ volunteers in the ABS organization, and participated
-            in several hackathons, including ones organized by WWF, where my team
-            reached the finals. These experiences made me more confident,
-            open-minded, and comfortable working with different people.
-          </p>
+          <p>{emphasizeAboutTerms("High school also gave me the chance to explore volunteering and more creative challenges. I volunteered with the Bulgarian Red Cross, mentored Erasmus+ volunteers in the ABS organization, and participated in several hackathons, including ones organized by WWF, where my team reached the finals. These experiences made me more confident, open-minded, and comfortable working with different people.")}</p>
         </div>
 
         <div

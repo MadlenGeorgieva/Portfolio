@@ -5,6 +5,148 @@ import Footer from "./Footer";
 import BackToTop from "./BackToTop";
 import styles from "./ProjectDetailTemplate.module.css";
 
+const keyTerms = [
+  "UX/UI designer",
+  "UX/UI Lead",
+  "sole designer and developer",
+  "main project contributor",
+  "user-centered experience",
+  "front-end prototype",
+  "user flows",
+  "user journeys",
+  "information architecture",
+  "interaction design",
+  "visual interface",
+  "wireframing",
+  "wireframes",
+  "prototyping",
+  "usability testing",
+  "affinity diagram",
+  "affinity diagramming",
+  "personas",
+  "interviews",
+  "observations",
+  "mind mapping",
+  "task flows",
+  "empathy map",
+  "Value Proposition Canvas",
+  "interactive quiz",
+  "hi-fi prototypes",
+  "Figma",
+  "memorabilia",
+  "research insights",
+  "target audience",
+  "personalized recommendations",
+  "personalized game recommendations",
+  "personalised location discovery",
+  "responsive website",
+  "high-fidelity Figma prototype",
+  "visual design system",
+  "UX strategy",
+  "UI design",
+  "design direction",
+  "shared family experience",
+  "tutorial videos",
+  "real-time information",
+  "SOS function",
+  "SOS feature",
+  "desk research",
+  "field research",
+  "semi-structured interviews",
+  "audience segmentation",
+  "user story mapping",
+  "Rich Picture",
+  "OOUX",
+  "empathy maps",
+  "pain points",
+  "testing and iteration",
+  "guerrilla testing",
+  "five-second tests",
+  "target group",
+  "Danish families with children",
+  "moodboards",
+  "style tiles",
+  "ideation",
+  "plant collection",
+  "plant exploration",
+  "families with children",
+  "large collection of board games",
+  "game-selection process",
+  "hidden gems",
+  "crowded environments",
+];
+
+const keyTermPattern = new RegExp(
+  `(${keyTerms
+    .sort((first, second) => second.length - first.length)
+    .map((term) => term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|")})`,
+  "gi",
+);
+
+const headingConclusions = {
+  "botanical-garden": {
+    sections: [
+      "PLANT INFORMATION WAS NOT ENGAGING FAMILIES",
+      "TURNING VISITS INTO SHARED EXPLORATION",
+      "UX/UI DESIGN FOR A PLAYFUL FAMILY EXPERIENCE",
+    ],
+    process: [
+      "UNDERSTANDING HOW FAMILIES VISIT",
+      "FOCUSING ON FAMILIES WITH CHILDREN",
+      "DESIGNING A SHARED EXPLORATION",
+      "REFINING THE FINAL FAMILY EXPERIENCE",
+    ],
+  },
+  "bla-sol": {
+    sections: [
+      "FESTIVAL VISITORS FELT DISCONNECTED",
+      "ONE PLATFORM FOR A SAFER FESTIVAL",
+      "UX/UI DESIGN AND FRONT-END DEVELOPMENT",
+    ],
+    process: [
+      "UNCOVERING FESTIVAL PAIN POINTS",
+      "TURNING RESEARCH INTO CLEAR PRIORITIES",
+      "DESIGNING THE FESTIVAL COMPANION",
+      "TESTING AND BUILDING THE SOLUTION",
+    ],
+  },
+  spilcafeen: {
+    sections: [
+      "TOO MUCH CHOICE MADE GAMES HARD TO FIND",
+      "MAKING GAME DISCOVERY SIMPLE",
+      "LEADING THE UX/UI DIRECTION",
+    ],
+    process: [
+      "UNDERSTANDING HOW GROUPS CHOOSE GAMES",
+      "STRUCTURING NEEDS AND GAME INFORMATION",
+      "DESIGNING PERSONALIZED RECOMMENDATIONS",
+      "VALIDATING A FASTER SELECTION EXPERIENCE",
+    ],
+  },
+  "hidden-hygge-places": {
+    sections: [
+      "HIDDEN HYGGE PLACES WERE HARD TO DISCOVER",
+      "MATCHING PEOPLE WITH MEANINGFUL PLACES",
+      "DESIGNING AND DEVELOPING THE FULL EXPERIENCE",
+    ],
+    process: [
+      "UNDERSTANDING WHAT MAKES HYGGE MEANINGFUL",
+      "TURNING RESEARCH INTO A FOCUSED CONCEPT",
+      "CREATING A PERSONALIZED DISCOVERY JOURNEY",
+      "REFINING AND BUILDING THE FINAL EXPERIENCE",
+    ],
+  },
+};
+
+function emphasizeKeyTerms(text) {
+  return text.split(keyTermPattern).map((part, index) =>
+    keyTerms.some((term) => term.toLowerCase() === part.toLowerCase())
+      ? <strong className={styles.keyTerm} key={`${part}-${index}`}>{part}</strong>
+      : part
+  );
+}
+
 function ProjectDetailTemplate({ project }) {
   const [openProcessImage, setOpenProcessImage] = useState(null);
   const heroLinkLabel = project.liveUrl?.includes("figma.com")
@@ -87,7 +229,7 @@ function ProjectDetailTemplate({ project }) {
             </h1>
             <p>{project.type}</p>
           </div>
-          <p className={styles.tagline}>{project.tagline}</p>
+          <p className={styles.tagline}>{emphasizeKeyTerms(project.tagline)}</p>
         </section>
 
         <section className={styles.contentSection}>
@@ -112,10 +254,13 @@ function ProjectDetailTemplate({ project }) {
           </div>
 
           <div className={styles.copyGrid}>
-            {project.sections.map((section) => (
+            {project.sections.map((section, index) => (
               <article key={section.heading}>
-                <h3>{section.heading}</h3>
-                <p>{section.text}</p>
+                <h3>
+                  {section.heading}
+                  <span className={styles.headingConclusion}> - {headingConclusions[project.slug]?.sections[index]}</span>
+                </h3>
+                <p>{emphasizeKeyTerms(section.text)}</p>
               </article>
             ))}
           </div>
@@ -129,8 +274,11 @@ function ProjectDetailTemplate({ project }) {
               >
                 <div className={`${styles.processCard} ${index % 2 ? styles.yellow : styles.blue}`}>
                   <p className={styles.stepNumber}>{String(index + 1).padStart(2, "0")} <sup>/04</sup></p>
-                  <h3>{step.title}</h3>
-                  <p className={styles.stepText}>{step.text}</p>
+                  <h3>
+                    {step.title}
+                    <span className={styles.headingConclusion}> - {headingConclusions[project.slug]?.process[index]}</span>
+                  </h3>
+                  <p className={styles.stepText}>{emphasizeKeyTerms(step.text)}</p>
                 </div>
                 <button
                   className={styles.processImage}

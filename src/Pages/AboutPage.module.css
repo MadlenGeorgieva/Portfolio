@@ -29,6 +29,23 @@
 .hard { top:210px; left:0; background:#ffbd00; }
 .tools { top:400px; right:0; color:#fff; background:#0878ee; }
 .mapBlue,.mapYellow { display:none; }
+
+@media (min-width:1101px) {
+  .mapYellow {
+    display:block;
+    top:-36px;
+    right:-4%;
+    width:18px;
+    height:18px;
+    background:#ffbd00;
+  }
+}
+
+@media (min-width:1600px) {
+  .mapYellow {
+    right:-12%;
+  }
+}
 .dots { position:absolute; z-index:5; top:-95px; right:8px; bottom:0; width:45px; background-image:radial-gradient(circle,#676767 3px,transparent 4px); background-size:13px 13px; }
 .footer { height:75px; padding:0 80px; display:grid; grid-template-columns:1fr 1fr 1.3fr; align-items:center; background:#f4f4f4; border-top:1px solid #666; }
 .footer > * { min-height:42px; padding:0 25px; display:flex; align-items:center; gap:12px; color:#111; text-decoration:none; border-left:1px solid #777; font-size:.82rem; }
@@ -54,7 +71,7 @@
 
 .main{padding-left:95px;padding-right:95px}.dots{width:65px}
 
-.intro>p{transform:translateX(-55px)}.intro,.skillMap{position:relative;z-index:1}.main::before,.main::after{content:"";display:block;position:absolute;z-index:0;border-radius:50%;pointer-events:none}.main::before{left:8%;top:520px;width:18px;height:18px;background:#ffbd00}.main::after{left:auto;right:8%;top:300px;width:22px;height:22px;background:#0878ee}
+.intro>p{transform:translateX(-55px)}.intro,.skillMap{position:relative;z-index:1}.main::before,.main::after{content:"";display:block;position:absolute;z-index:0;border-radius:50%;pointer-events:none}.main::before{left:8%;top:520px;width:18px;height:18px;background:#ffbd00}.main::after{left:auto;right:8%;top:300px;width:38px;height:38px;background:#0878ee}
 
 .portrait{bottom:-30px}.badge{bottom:-38px}.yellowOne{left:98px;top:50px}.blueOne{left:145px;top:43px}
 
@@ -134,6 +151,12 @@
 }
 
 /* Tablet About overview: stack the two visual systems inside the frame. */
+@media (min-width:1051px){
+  .hard{transform:translateY(5px)}
+  .tools{transform:translateY(18px)}
+}
+
+/* Tablet About overview: stack the two visual systems inside the frame. */
 @media (min-width: 701px) and (max-width: 1100px) {
   .page { min-width: 0; height: auto; min-height: 100vh; overflow-x: hidden; display: block; }
   .page > header, .page > footer { height: auto; }
@@ -158,3 +181,5 @@
   .dots { width: 65px; }
 }
 .footer > :nth-child(2) b,.footer > :nth-child(3) b{font-size:0}.footer > :nth-child(2) b::before{content:"☎";font-size:1.15rem}.footer > :nth-child(3) b::before{content:"✉";font-size:1.15rem}
+
+.aboutKeyTerm{color:#0878ee;font-weight:750}

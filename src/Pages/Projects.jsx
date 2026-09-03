@@ -12,10 +12,10 @@ import { useLayoutEffect } from "react";
 const projectImages = [blaSolImage, hyggeImage, spilcafeenImage, botanicalImage];
 
 const projects = [
-  { title: "BLÅ SOL", subtitle: "LOSE YOURSELF IN THE MUSIC, NOT THE CROWD", tone: "music", mark: "50", slug: "bla-sol" },
-  { title: "HIDDEN HYGGE PLACES", subtitle: "FIND YOUR NEXT COZY ESCAPE", tone: "hygge", mark: "HYGGE", slug: "hidden-hygge-places" },
-  { title: "SPILCAFEEN", subtitle: "WHERE PLAY HAS NO BORDERS", tone: "games", mark: "PLAY", slug: "spilcafeen" },
-  { title: "BOTANICAL GARDEN AARHUS", subtitle: "BRING YOU DIGITAL GARDEN TO LIFE", tone: "garden", mark: "AARHUS", slug: "botanical-garden" },
+  { title: "BLÅ SOL", subtitle: "MOBILE FESTIVAL COMPANION", tone: "music", mark: "50", slug: "bla-sol" },
+  { title: "HIDDEN HYGGE PLACES", subtitle: "PERSONALIZED DISCOVERY WEBSITE", tone: "hygge", mark: "HYGGE", slug: "hidden-hygge-places" },
+  { title: "SPILCAFEEN", subtitle: "BOARD-GAME RECOMMENDATION EXPERIENCE", tone: "games", mark: "PLAY", slug: "spilcafeen" },
+  { title: "BOTANICAL GARDEN", subtitle: "INTERACTIVE FAMILY EXPLORATION APP", tone: "garden", mark: "AARHUS", slug: "botanical-garden" },
 ];
 
 function Projects() {
@@ -46,7 +46,7 @@ function Projects() {
             <img src={projectImages[index]} alt={`${project.title} project mockup`} />
             <span className={styles.hoverLabel}>View project</span>
           </div>}
-          <p><b>{project.title}</b> – {project.subtitle}</p>
+          <p><b>{project.title}</b> - {project.subtitle}</p>
           <i className={index % 2 ? styles.yellow : styles.blue} />
         </article>)}
       </div>

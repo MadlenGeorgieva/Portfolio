@@ -6,11 +6,17 @@ function Contact() {
     <Header />
     <main className={styles.main}>
       <h1>C<span>O</span>NTACT<br />ME</h1>
-      <section className={styles.details}>
-        <a href="https://www.linkedin.com/in/madlen-georgieva-39ab3230a" target="_blank" rel="noreferrer"><u>Madlen Georgieva</u><b>in</b></a>
-        <a href="tel:+4571817500"><span>(+45) 71817500<br />(+359) 879206069</span><b aria-label="Phone">☎</b></a>
-        <a href="mailto:madlengeorgieva2005@gmail.com"><span>madlengeorgieva2005@gmail.com<br />eaa25mage@students.eaaa.dk</span><b aria-label="Email">✉</b></a>
-      </section>
+      <div className={styles.contactContent}>
+        <p className={styles.contactIntro}>
+          Looking for someone who likes figuring things out, getting things done,
+          and having a little fun along the way? I’d love to hear from you.
+        </p>
+        <section className={styles.details}>
+          <a href="https://www.linkedin.com/in/madlen-georgieva-39ab3230a" target="_blank" rel="noreferrer"><u>Madlen Georgieva</u><b>in</b></a>
+          <a href="tel:+4571817500"><span>(+45) 71817500<br />(+359) 879206069</span><b aria-label="Phone">☎</b></a>
+          <a href="mailto:madlengeorgieva2005@gmail.com"><span>madlengeorgieva2005@gmail.com<br />eaa25mage@students.eaaa.dk</span><b aria-label="Email">✉</b></a>
+        </section>
+      </div>
       <div className={styles.decorCircles} aria-hidden="true">
         <i className={`${styles.decorCircle} ${styles.largeBlue}`} />
         <i className={`${styles.decorCircle} ${styles.largeYellow}`} />

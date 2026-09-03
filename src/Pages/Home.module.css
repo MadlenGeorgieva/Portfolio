@@ -276,6 +276,12 @@ the reference.
   letter-spacing: 1.3px;
 }
 
+/* Lower the portrait and its curved name as one balanced visual group. */
+.profileCircle,
+.nameTextSvg {
+  translate: 0 10px;
+}
+
 /* =========================
    UX/UI BADGE
    ========================= */

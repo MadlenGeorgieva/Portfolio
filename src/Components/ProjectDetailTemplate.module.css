@@ -85,6 +85,14 @@
   .dots{width:30px}
 }
 
+/* Let longer case-study copy expand its rectangle instead of overflowing it. */
+@media(min-width:701px){
+  .processCard{
+    height:auto;
+    min-height:275px;
+  }
+}
+
 /* Tablet case-study layout. */
 @media (min-width: 701px) and (max-width: 1100px) {
   .hero { width: calc(100% - 160px); height: clamp(360px, 54vw, 520px); border-radius: 32px; }
@@ -141,6 +149,21 @@
 
 /* The Blå Sol artwork is a complete phone lineup, so preserve its full frame. */
 .fullPhoneHero img{object-fit:contain;object-position:center}
+.keyTerm{color:#0878ee;font-weight:750}
+.processCard .keyTerm{color:inherit;font-weight:850}
+.headingConclusion{font-size:1em;font-weight:400;letter-spacing:inherit}
+
+.copyGrid h3{
+  font-family:Arial,Helvetica,sans-serif;
+  font-weight:900;
+}
+
+.headingConclusion{
+  font-family:Arial,Helvetica,sans-serif;
+  font-weight:400;
+}
+
+@media(max-width:760px){.headingConclusion{display:block;margin-top:5px;font-size:1em;font-weight:400;line-height:1.12}}
 
 @media(max-width:700px){
   .processStep{min-height:0;padding-top:0;display:flex;flex-direction:column;gap:18px}
@@ -158,4 +181,11 @@
   }
   .imageLightbox{padding:18px}.imageLightbox img{max-width:96vw;max-height:82vh;border-radius:16px}
   .imageLightboxClose{top:14px;right:14px;width:46px;height:46px}
+}
+
+@media(min-width:701px){
+  .processCard{
+    height:auto;
+    min-height:275px;
+  }
 }
