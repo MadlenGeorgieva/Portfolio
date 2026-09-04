@@ -34,16 +34,17 @@ function Projects() {
           {project.slug ? <Link
             to={`/projects/${project.slug}`}
             className={styles.mockup}
+            aria-label={`View ${project.title} project`}
             style={{ backgroundImage: `url(${projectImages[index]})` }}
           >
-            <img src={projectImages[index]} alt={`${project.title} project mockup`} />
             <span className={styles.hoverLabel}>View project</span>
           </Link> : <div
             className={styles.mockup}
             tabIndex="0"
+            role="img"
+            aria-label={`${project.title} project mockup`}
             style={{ backgroundImage: `url(${projectImages[index]})` }}
           >
-            <img src={projectImages[index]} alt={`${project.title} project mockup`} />
             <span className={styles.hoverLabel}>View project</span>
           </div>}
           <p><b>{project.title}</b> - {project.subtitle}</p>

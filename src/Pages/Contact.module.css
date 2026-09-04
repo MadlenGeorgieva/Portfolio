@@ -76,7 +76,8 @@
 }
 
 /* Balanced invitation and contact-details composition. */
-.contactContent{position:relative;z-index:2;width:100%;max-width:1200px;margin:58px auto 0}
+.main>h1,.contactContent{width:100%;max-width:1190px;margin-left:auto;margin-right:auto}
+.contactContent{position:relative;z-index:2;margin-top:58px}
 .contactContent .contactIntro{width:auto;max-width:470px;margin:0;font-size:1.12rem;line-height:1.55}
 .contactContent .details{width:100%;max-width:none;margin:0}
 
@@ -88,9 +89,15 @@
 }
 
 @media(min-width:1600px){
-  .contactContent{max-width:1240px;margin-top:64px}
-  .contactContent .details a{font-size:1.16rem}
-  .contactContent .details b,.contactContent .details a:nth-child(even) b{width:58px;height:58px;font-size:1.75rem}
+  .main>h1,.contactContent{max-width:1430px}
+  .main>h1{font-size:8rem}
+  .contactContent{margin-top:70px;grid-template-columns:minmax(420px,.85fr) minmax(650px,1.15fr);gap:clamp(100px,9vw,175px)}
+  .contactContent .contactIntro{max-width:560px;font-size:1.32rem;line-height:1.52}
+  .contactContent .details{gap:30px}
+  .contactContent .details a{font-size:1.35rem}
+  .contactContent .details b,.contactContent .details a:nth-child(even) b{width:70px;height:70px;font-size:2.15rem}
+  .largeBlue{width:58px;height:58px}.largeYellow{width:56px;height:56px}
+  .smallBlueOne,.smallYellowOne{width:24px;height:24px}.smallBlueTwo,.smallYellowTwo{width:21px;height:21px}
 }
 
 @media(max-width:1100px){

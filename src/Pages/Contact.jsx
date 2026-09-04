@@ -8,8 +8,10 @@ function Contact() {
       <h1>C<span>O</span>NTACT<br />ME</h1>
       <div className={styles.contactContent}>
         <p className={styles.contactIntro}>
-          Looking for someone who likes figuring things out, getting things done,
-          and having a little fun along the way? I’d love to hear from you.
+          Good ideas often start with a simple conversation. I’m always open to new
+          projects, collaborations, and challenges that give me the chance to create,
+          solve problems, and learn along the way. If you think we could build something
+          interesting together, I’d love to hear about it.
         </p>
         <section className={styles.details}>
           <a href="https://www.linkedin.com/in/madlen-georgieva-39ab3230a" target="_blank" rel="noreferrer"><u>Madlen Georgieva</u><b>in</b></a>

@@ -16,8 +16,8 @@
 .portrait img { width:100%; height:100%; object-fit:cover; object-position:50% 36%; filter:grayscale(1); }
 .badge { position:absolute; left:327px; bottom:-8px; width:94px; aspect-ratio:1; display:grid; place-items:center; border-radius:50%; background:#ffbd00; color:#111; font-size:1.16rem; font-weight:600; z-index:4; }
 .portraitArea > i,.skillMap > i { position:absolute; display:block; border-radius:50%; }
-.yellowOne { left:0; top:42px; width:37px; height:37px; background:#ffbd00; }
-.blueOne { left:58px; top:37px; width:19px; height:19px; background:#0878ee; }
+.yellowOne { left:0; top:42px; width:37px; height:37px; background:#ffbd00; z-index:3; }
+.blueOne { left:58px; top:37px; width:19px; height:19px; background:#0878ee; z-index:3; }
 .blueTwo { left:430px; top:92px; width:38px; height:38px; background:#0878ee; }
 .yellowTwo { left:410px; bottom:28px; width:19px; height:19px; background:#ffbd00; }
 .skillMap { position:relative; width:800px; min-width:800px; height:750px; margin:0 auto; transform:translateX(-90px); }
@@ -71,7 +71,7 @@
 
 .main{padding-left:95px;padding-right:95px}.dots{width:65px}
 
-.intro>p{transform:translateX(-55px)}.intro,.skillMap{position:relative;z-index:1}.main::before,.main::after{content:"";display:block;position:absolute;z-index:0;border-radius:50%;pointer-events:none}.main::before{left:8%;top:520px;width:18px;height:18px;background:#ffbd00}.main::after{left:auto;right:8%;top:300px;width:38px;height:38px;background:#0878ee}
+.intro>p{transform:translateX(-55px)}.intro,.skillMap{position:relative;z-index:1}.main::before,.main::after{content:"";display:block;position:absolute;z-index:0;border-radius:50%;pointer-events:none}.main::before{left:8%;top:520px;width:18px;height:18px;background:#ffbd00}.main::after{left:auto;right:8%;top:300px;width:53px;height:53px;background:#0878ee}
 
 .portrait{bottom:-30px}.badge{bottom:-38px}.yellowOne{left:98px;top:50px}.blueOne{left:145px;top:43px}
 
@@ -95,8 +95,13 @@
 .badge{bottom:2px}
 
 /* Lower the portrait group slightly so it flows naturally into the story below. */
-.portrait{bottom:-8px}
-.badge{bottom:-16px}
+.portraitArea{--portrait-left:100px;--portrait-size:260px}
+.portrait{left:var(--portrait-left);bottom:2px;width:var(--portrait-size)}
+.badge{left:290px;bottom:-6px}
+.yellowOne{left:calc(var(--portrait-left) - 50px);top:52px}
+.blueOne{left:calc(var(--portrait-left) - 14px);top:35px}
+.blueTwo{left:calc(var(--portrait-left) + var(--portrait-size) + 18px);top:84px}
+.yellowTwo{left:calc(var(--portrait-left) + var(--portrait-size) + 20px);bottom:22px;z-index:3}
 
 /* Lower both visual groups while preserving all of their internal positioning. */
 .portraitArea{transform:translateY(38px)}
@@ -105,7 +110,7 @@
 @media(max-width:700px){
   .page{width:100%;min-width:0;height:auto;min-height:100vh;overflow-x:hidden;overflow-y:visible;display:block}
   .page>header,.page>footer{height:auto}
-  .main{display:block;width:100%;height:auto;min-height:0;padding:24px 45px 48px;overflow:visible}
+  .main{display:block;width:100%;height:auto;min-height:0;padding:24px 50px 48px;overflow:hidden}
   .intro h1{transform:none;font-size:clamp(3rem,15vw,3.6rem);white-space:nowrap}
   .intro h1 i{margin-left:10px}
   .intro>p{width:100%;max-width:none;margin-top:20px;transform:none;font-size:1rem;line-height:1.42}
@@ -118,7 +123,7 @@
   .yellowOne{left:5%;top:34px}.blueOne{left:22%;top:29px}.blueTwo{left:auto;right:4%;top:72px}.yellowTwo{left:auto;right:8%;bottom:36px}
   .skillMap{width:100%;min-width:0;height:665px;margin:12px 0 0}
   .skillMap{margin-top:30px;transform:translateY(18px)}
-  .circle{width:230px;padding:25px}
+  .circle{width:min(230px,100%);padding:25px}
   .soft{top:0;right:0;left:auto}.hard{top:205px;left:0}.tools{top:410px;right:0}
   .circle h2{font-size:1.08rem}.circle ul{font-size:.83rem;line-height:1.2}
   .main::before{left:10%;top:48%;width:14px;height:14px}.main::after{right:10%;top:68%;width:17px;height:17px}
@@ -129,7 +134,7 @@
 @media (min-width:1600px){
   .main{grid-template-columns:570px 680px;column-gap:70px}
   .intro h1{font-size:7rem}.intro>p{width:550px;font-size:1.32rem}
-  .portraitArea{height:325px}.portrait{left:118px;width:285px}.badge{left:325px;width:90px}
+  .portraitArea{--portrait-left:103px;--portrait-size:310px;height:325px}.badge{left:328px;width:90px}
   .skillMap{width:680px;min-width:680px;height:610px}
   .circle{width:292px;padding:34px}
   .soft{top:-32px;right:81px}.hard{top:181px;left:57px}.tools{top:286px;right:0}
@@ -143,7 +148,7 @@
 @media (min-width:1600px) and (max-height:900px){
   .main{grid-template-columns:540px 620px;column-gap:55px}
   .intro h1{font-size:7rem}.intro>p{width:520px;font-size:1.22rem}
-  .portraitArea{height:300px}.portrait{left:120px;width:265px}.badge{left:312px;width:86px}
+  .portraitArea{--portrait-left:105px;--portrait-size:290px;height:300px}.badge{left:315px;width:86px}
   .skillMap{width:620px;min-width:620px;height:550px;transform:translateY(38px)}
   .circle{width:272px;padding:30px}
   .soft{top:-30px;right:74px}.hard{top:172px;left:51px}.tools{top:272px;right:0}
@@ -152,8 +157,9 @@
 
 /* Tablet About overview: stack the two visual systems inside the frame. */
 @media (min-width:1051px){
+  .soft{transform:translateY(10px)}
   .hard{transform:translateY(5px)}
-  .tools{transform:translateY(18px)}
+  .tools{transform:translateY(28px)}
 }
 
 /* Tablet About overview: stack the two visual systems inside the frame. */

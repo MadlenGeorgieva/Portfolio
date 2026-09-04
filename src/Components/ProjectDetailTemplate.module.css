@@ -121,7 +121,7 @@
 
 /* Scale case studies within the dotted frame on wide displays. */
 @media (min-width:1600px){
-  .hero{max-width:1480px;height:min(760px,78vh)}
+  .hero{max-width:1480px;height:auto;aspect-ratio:1.84/1}
   .intro,.contentSection{max-width:1460px;padding-inline:95px}
   .overviewGrid{gap:48px}.processList{max-width:none}.processCard{width:80%}
 }

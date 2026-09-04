@@ -419,8 +419,8 @@
   .photo4 { top: 128px; right: 0; }
   .photo5 { right: 36px; bottom: 45px; }
 
-  .storySection::before { left: -18px; bottom: 6%; }
-  .storySection::after { right: -18px; top: 10%; }
+  .storySection::before { left: 6px; bottom: 6%; }
+  .storySection::after { right: 6px; top: 10%; }
 
   .volunteeringGallery { height: 390px; }
   .volunteeringGallery .storyPhoto { width: min(24vw, 84px); }
