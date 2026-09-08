@@ -1144,3 +1144,20 @@ the reference.
     top: 40px;
   }
 }
+
+/* Reserve the badge's own space below the portrait on phones. */
+@media (max-width: 700px) {
+  .hero { grid-template-rows: auto auto auto; }
+  .heroRight {
+    --portrait-top: clamp(72px, 23vw, 92px);
+    --portrait-size: clamp(168px, 58vw, 232px);
+    --badge-size: clamp(58px, 19vw, 76px);
+    height: calc(var(--portrait-top) + var(--portrait-size) + 34px + var(--badge-size));
+    min-height: 0;
+  }
+  .profileCircle { top: var(--portrait-top); }
+  .uxBadge {
+    top: calc(var(--portrait-top) + var(--portrait-size) + 34px);
+    bottom: auto;
+  }
+}

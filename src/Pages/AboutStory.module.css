@@ -557,3 +557,18 @@
   .storyGallery, .volunteeringGallery { width: min(100%, 600px); height: 570px; }
   .volunteeringSection { padding-top: 40px; padding-bottom: 60px; }
 }
+
+/* Let narrow story columns shrink to the space inside the dotted frame. */
+@media (max-width: 1050px) {
+  .storySection { grid-template-columns: minmax(0, 1fr); }
+  .storySection > * { min-width: 0; max-width: 100%; }
+  .storyCopy { container-type: inline-size; overflow-wrap: anywhere; }
+  .storyCopy h2 { font-size: clamp(1.6rem, 12.5cqi, 4.3rem); }
+}
+
+@media (max-width: 700px) {
+  .storySection::before,
+  .storySection::after { display: none; }
+  .mobileGalleryPreviews { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .mobileGalleryPreviews button { min-width: 0; }
+}
