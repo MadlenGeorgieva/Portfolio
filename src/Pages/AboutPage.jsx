@@ -16,6 +16,9 @@ import beachImage from "../assets/about-volunteering-beach.jpg";
 import wwfImage from "../assets/about-volunteering-wwf.jpg";
 import redCrossImage from "../assets/about-volunteering-red-cross.jpg";
 import redCrossEventImage from "../assets/about-volunteering-red-cross-event.jpg";
+import softSkillsIcon from "../assets/soft-skills-icon.png";
+import hardSkillsIcon from "../assets/hard-skills-icon.png";
+import toolsIcon from "../assets/tools-icon.png";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import BackToTop from "../Components/BackToTop";
@@ -50,9 +53,9 @@ function emphasizeAboutTerms(text) {
 }
 
 const skills = [
-  { className: "soft", icon: "♧", title: "SOFT SKILLS", items: ["Empathy", "Problem Solving", "Critical Thinking", "Collaboration", "Communication"] },
-  { className: "hard", icon: "♙", title: "HARD SKILLS", items: ["UI Design", "UX Research", "Wireframing", "Prototyping", "User Flows", "Design Systems"] },
-  { className: "tools", icon: "⚒", title: "TOOLS", items: ["Figma", "HTML/CSS", "JavaScript", "React", "WordPress", "Git/GitHub", "AI Workflows"] },
+  { className: "soft", icon: softSkillsIcon, title: "SOFT SKILLS", items: ["Empathy", "Problem Solving", "Critical Thinking", "Collaboration", "Communication"] },
+  { className: "hard", icon: hardSkillsIcon, title: "HARD SKILLS", items: ["UI Design", "UX Research", "Wireframing", "Prototyping", "User Flows", "Design Systems"] },
+  { className: "tools", icon: toolsIcon, title: "TOOLS", items: ["Figma", "HTML/CSS", "JavaScript", "React", "WordPress", "Git/GitHub", "AI Workflows"] },
 ];
 
 const storyPhotos = [
@@ -193,7 +196,7 @@ function AboutPage() {
         <section className={styles.skillMap}>
           {skills.map((skill) => (
             <article className={`${styles.circle} ${styles[skill.className]}`} key={skill.title}>
-              <div className={styles.skillIcon}>{skill.icon}</div>
+              <img className={styles.skillIcon} src={skill.icon} alt="" />
               <h2>{skill.title}</h2>
               <ul>{skill.items.map((item) => <li key={item}>{item}</li>)}</ul>
             </article>

@@ -189,3 +189,7 @@
 .footer > :nth-child(2) b,.footer > :nth-child(3) b{font-size:0}.footer > :nth-child(2) b::before{content:"☎";font-size:1.15rem}.footer > :nth-child(3) b::before{content:"✉";font-size:1.15rem}
 
 .aboutKeyTerm{color:#0878ee;font-weight:750}
+
+/* Supplied skill illustrations, centered above their bubble headings. */
+.skillIcon { width: 32px; height: 32px; object-fit: contain; margin: 0 auto 4px; flex-shrink: 0; }
+@media (max-width: 700px) { .skillIcon { width: 28px; height: 28px; } }

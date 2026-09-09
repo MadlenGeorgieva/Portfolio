@@ -132,3 +132,56 @@
   .largeBlue, .largeYellow { width: 32px; height: 32px; }
   .details a > span, .details a > u { min-width: 0; overflow-wrap: anywhere; }
 }
+
+/* Scatter phone bubbles in reserved gaps, anchored to the content they surround. */
+@media (max-width: 700px) {
+  .main { padding-bottom: 90px; }
+  .decorCircles { display: none; }
+  .contactContent { margin-top: 60px; }
+  .contactContent .contactIntro { position: relative; }
+  .contactContent .details { margin-top: 70px; gap: 44px; }
+  .details a { position: relative; }
+
+  .contactContent::before,
+  .contactContent::after,
+  .contactIntro::before,
+  .contactIntro::after,
+  .details a:nth-child(1)::after,
+  .details a:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .contactContent::before {
+    width: 26px; height: 26px;
+    top: -44px; right: 8%;
+    background: #0878ee;
+  }
+  .contactIntro::before {
+    width: 12px; height: 12px;
+    top: -30px; left: 18%;
+    background: #ffbd00;
+  }
+  .contactIntro::after {
+    width: 32px; height: 32px;
+    bottom: -50px; right: 12%;
+    background: #ffbd00;
+  }
+  .details a:nth-child(1)::after {
+    width: 14px; height: 14px;
+    bottom: -29px; left: 30%;
+    background: #0878ee;
+  }
+  .details a:nth-child(2)::after {
+    width: 18px; height: 18px;
+    bottom: -31px; right: 8%;
+    background: #ffbd00;
+  }
+  .contactContent::after {
+    width: 34px; height: 34px;
+    bottom: -58px; left: 18%;
+    background: #0878ee;
+  }
+}
